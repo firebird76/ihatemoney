@@ -3,17 +3,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  \n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2023-07-29 14:24+0200\n"
-"PO-Revision-Date: 2021-02-17 02:50+0000\n"
-"Last-Translator: Sander Kooijmans <weblate@gogognome.nl>\n"
+"POT-Creation-Date: 2026-07-21 23:16+0200\n"
+"PO-Revision-Date: 2024-03-17 12:01+0000\n"
+"Last-Translator: Xander Jennie <xanderjennie21@gmail.com>\n"
 "Language: nl\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/i-hate-money/i"
 "-hate-money/nl/>\n"
-"Plural-Forms: nplurals=2; plural=n != 1\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.9.0\n"
+"Generated-By: Babel 2.16.0\n"
 
 #, python-format
 msgid "You have just created '%(project)s' to share your expenses"
@@ -31,19 +31,17 @@ msgstr ""
 msgid "Project name"
 msgstr "Projectnaam"
 
-#, fuzzy
 msgid "Current private code"
-msgstr "Privécode"
+msgstr "Huidige Privécode"
 
 msgid "Enter existing private code to edit project"
-msgstr ""
+msgstr "Voer het huidige privécode in om dit project te bewerken"
 
-#, fuzzy
 msgid "New private code"
-msgstr "Privécode"
+msgstr "Nieuwe privécode"
 
 msgid "Enter a new code if you want to change it"
-msgstr ""
+msgstr "Voer een nieuwe code in als u deze wilt wijzigen"
 
 msgid "Email"
 msgstr "E-mailadres"
@@ -51,30 +49,35 @@ msgstr "E-mailadres"
 msgid "Enable project history"
 msgstr "Projectgeschiedenis inschakelen"
 
-msgid "Use IP tracking for project history"
-msgstr "IP-tracking voor projectgeschiedenis gebruiken"
-
 msgid "Default Currency"
 msgstr "Standaard munteenheid"
 
 msgid "Setting a default currency enables currency conversion between bills"
 msgstr ""
+"Door een standaardvaluta in te stellen, is valutaconversie tussen "
+"facturen mogelijk"
 
-#, fuzzy
 msgid "Unknown error"
-msgstr "Onbekend project"
+msgstr "Onbekende fout"
 
-#, fuzzy
 msgid "Invalid private code."
-msgstr "Privécode"
+msgstr "Ongeldige privécode."
 
 msgid ""
 "This project cannot be set to 'no currency' because it contains bills in "
 "multiple currencies."
 msgstr ""
+"Dit project kan niet op 'geen valuta' worden gezet, omdat het facturen in"
+" meerdere valuta's bevat."
+
+#, fuzzy
+msgid "Cannot change project currency because currency conversion is broken"
+msgstr ""
+"Door een standaardvaluta in te stellen, is valutaconversie tussen "
+"facturen mogelijk"
 
 msgid "Compatible with Cospend"
-msgstr ""
+msgstr "Compatibel met mede besteden"
 
 msgid "Project identifier"
 msgstr "Project-id"
@@ -92,17 +95,16 @@ msgid ""
 msgstr "Er is al een project genaamd (\"%(project)s\"). Kies een andere naam"
 
 msgid "Which is a real currency: Euro or Petro dollar?"
-msgstr ""
+msgstr "Wat is een echte valuta: de euro of de petro-dollar?"
 
-#, fuzzy
 msgid "euro"
-msgstr "Periode"
+msgstr "euro"
 
 msgid "Please, validate the captcha to proceed."
-msgstr ""
+msgstr "Valideer de captcha om door te gaan."
 
 msgid "Enter private code to confirm deletion"
-msgstr ""
+msgstr "Voer de privécode in om de verwijder opdracht te bevestigen"
 
 msgid "Get in"
 msgstr "Inloggen"
@@ -126,7 +128,7 @@ msgid "Password confirmation"
 msgstr "Wachtwoord bevestigen"
 
 msgid "Reset password"
-msgstr "Wachtwoord herstellen"
+msgstr "Wachtwoord opnieuw instellen"
 
 msgid "When?"
 msgstr "Wanneer?"
@@ -152,6 +154,10 @@ msgstr "Een link naar een extern document, gerelateerd aan deze rekening"
 msgid "For whom?"
 msgstr "Aan wie?"
 
+#, fuzzy
+msgid "Bill Type"
+msgstr "Rekeningitems"
+
 msgid "Submit"
 msgstr "Versturen"
 
@@ -161,6 +167,10 @@ msgstr "Versturen en nieuwe toevoegen"
 #, python-format
 msgid "Project default: %(currency)s"
 msgstr "Projectstandaard: %(currency)s"
+
+#, python-format
+msgid "Failed to convert from %(bill_currency)s currency to %(project_currency)s"
+msgstr ""
 
 msgid "Name"
 msgstr "Naam"
@@ -174,16 +184,14 @@ msgstr "Gewicht"
 msgid "Add"
 msgstr "Toevoegen"
 
-#, fuzzy
 msgid "The participant name is invalid"
-msgstr "De gebruiker '%(name)s' is verwijderd"
+msgstr "De naam van de deelnemer is ongeldig"
 
-#, fuzzy
 msgid "This project already have this participant"
 msgstr "Deze deelnemer is al lid van het project"
 
 msgid "People to notify"
-msgstr ""
+msgstr "Mensen om op de hoogte te stellen"
 
 msgid "Send the invitations"
 msgstr "Uitnodigingen versturen"
@@ -196,54 +204,56 @@ msgid "Logout"
 msgstr "Uitloggen"
 
 msgid "Please check the email configuration of the server."
-msgstr ""
+msgstr "Controleer de e-mailconfiguratie van de server."
 
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "Please check the email configuration of the server or contact the "
 "administrator: %(admin_email)s"
 msgstr ""
-"Sorry, er is iets fout gegaan bij het verzenden van de uitnodigingsmails."
-" Controleer de e-mailinstellingen van de server of neem contact op met de"
-" beheerder."
+"Controleer de e-mailinstellingen van de server of neem contact op met de "
+"beheerder: %(admin_email)s"
 
 #. List with two items only
 msgid "{dual_object_0} and {dual_object_1}"
-msgstr ""
+msgstr "{dual_object_0} en {dual_object_1}"
 
 #. Last two items of a list with more than 3 items
 msgid "{previous_object}, and {end_object}"
-msgstr ""
+msgstr "{previous_object} en{end_object}"
 
 #. Two items in a middle of a list with more than 5 objects
 msgid "{previous_object}, {next_object}"
-msgstr ""
+msgstr "{previous_object}, {next_object}"
 
 #. First two items of a list with more than 3 items
 msgid "{start_object}, {next_object}"
-msgstr ""
+msgstr "{start_object}, {next_object}"
 
 msgid "No Currency"
-msgstr "Geen munteenheid"
+msgstr "Geen valuta"
 
 #. Form error with only one error
 msgid "{prefix}: {error}"
-msgstr ""
+msgstr "{prefix}: {error}"
 
 #. Form error with a list of errors
 msgid "{prefix}:<br />{errors}"
-msgstr ""
+msgstr "{prefix}:<br />{errors}"
 
-#, fuzzy
 msgid "Too many failed login attempts."
-msgstr "Te vaak onjuist ingelogd. Probeer het later opnieuw."
+msgstr "Te veel mislukte inlogpogingen."
 
 #, python-format
 msgid "This admin password is not the right one. Only %(num)d attempts left."
 msgstr "Het admin-wachtwoord is onjuist. Je kunt het nog %(num)d keer proberen."
 
 msgid "Provided token is invalid"
-msgstr ""
+msgstr "Het opgegeven token is ongeldig"
+
+#, fuzzy, python-format
+msgid "This private code is not the right one. Only %(num)d attempts left."
+msgstr "Het admin-wachtwoord is onjuist. Je kunt het nog %(num)d keer proberen."
 
 msgid "This private code is not the right one"
 msgstr "Deze privécode is onjuist"
@@ -258,14 +268,12 @@ msgstr ""
 "We hebben geprobeerd een herinneringsmail te versturen, maar er is iets "
 "fout gegaan. Je kunt het project nog steeds normaal gebruiken."
 
-#, fuzzy
 msgid ""
 "Sorry, there was an error while sending you an email with password reset "
 "instructions."
 msgstr ""
 "Sorry, er is iets fout gegaan bij het verzenden van een e-mail met "
-"instructies om je wachtwoord te herstellen. Controleer de "
-"e-mailinstellingen van de server of neem contact op met de beheerder."
+"instructies om je wachtwoord te herstellen."
 
 msgid "No token provided"
 msgstr "Geen toegangssleutel opgegeven"
@@ -283,11 +291,11 @@ msgid "Project settings have been changed successfully."
 msgstr ""
 
 msgid "Unable to parse CSV"
-msgstr ""
+msgstr "Kan CSV niet parseren"
 
 #, python-format
 msgid "Missing attribute: %(attribute)s"
-msgstr ""
+msgstr "Ontbrekende attribute: %(attribute)s"
 
 msgid ""
 "Cannot add bills in multiple currencies to a project without default "
@@ -304,7 +312,7 @@ msgid "Error deleting project"
 msgstr ""
 
 msgid "Unable to logout"
-msgstr ""
+msgstr "Kan niet uitloggen"
 
 #, python-format
 msgid "You have been invited to share your expenses for %(project)s"
@@ -354,10 +362,10 @@ msgid "The bill has been added"
 msgstr "De rekening is toegevoegd"
 
 msgid "Error deleting bill"
-msgstr ""
+msgstr "Fout bij verwijderen factuur"
 
 msgid "The bill has been deleted"
-msgstr "De rekening is verwijderd"
+msgstr "De factuur is verwijderd"
 
 msgid "The bill has been modified"
 msgstr "De rekening is aangepast"
@@ -367,19 +375,24 @@ msgid "%(lang)s is not a supported language"
 msgstr ""
 
 #, fuzzy
+msgid "Error creating settlement bill"
+msgstr "Fout bij verwijderen factuur"
+
+#, fuzzy
+msgid "Settlement"
+msgstr "Schikken"
+
+#, fuzzy
+msgid "Settlement bill has been successfully added"
+msgstr "De rekening is toegevoegd"
+
+#, fuzzy
 msgid "Error deleting project history"
 msgstr "Projectgeschiedenis inschakelen"
 
 #, fuzzy
 msgid "Deleted project history."
 msgstr "Projectgeschiedenis inschakelen"
-
-#, fuzzy
-msgid "Error deleting recorded IP addresses"
-msgstr "Verwijder opgeslagen IP-adressen"
-
-msgid "Deleted recorded IP addresses in project history."
-msgstr ""
 
 msgid "Sorry, we were unable to find the page you've asked for."
 msgstr "Sorry, de pagina die je zoekt kan niet worden gevonden."
@@ -393,9 +406,8 @@ msgstr "Terug naar de lijst"
 msgid "Administration tasks are currently disabled."
 msgstr "Beheerderstaken zijn momenteel uitgeschakeld."
 
-#, fuzzy
 msgid "Authentication"
-msgstr "Documentatie"
+msgstr "Authenticatie"
 
 msgid "The project you are trying to access do not exist, do you want to"
 msgstr "Het project dat je probeert te benaderen bestaat niet. Wil je"
@@ -412,18 +424,17 @@ msgstr "Nieuw project aanmaken"
 msgid "Project"
 msgstr "Project"
 
-#, fuzzy
 msgid "Number of participants"
-msgstr "deelnemers toevoegen"
+msgstr "Aantal deelnemers"
 
 msgid "Number of bills"
-msgstr "Aantal rekeningen"
+msgstr "Aantal facturen"
 
 msgid "Newest bill"
-msgstr "Nieuwste rekening"
+msgstr "Nieuwste factuur"
 
 msgid "Oldest bill"
-msgstr "Oudste rekening"
+msgstr "Oudste factuur"
 
 msgid "Actions"
 msgstr "Acties"
@@ -431,9 +442,8 @@ msgstr "Acties"
 msgid "edit"
 msgstr "bewerken"
 
-#, fuzzy
 msgid "Delete project"
-msgstr "Project aanpassen"
+msgstr "Project verwijderen"
 
 msgid "show"
 msgstr "tonen"
@@ -441,9 +451,8 @@ msgstr "tonen"
 msgid "The Dashboard is currently deactivated."
 msgstr "De overzichtspagina is momenteel uitgeschakeld."
 
-#, fuzzy
 msgid "Download Mobile Application"
-msgstr "Mobiele app"
+msgstr "Mobiele applicatie downloaden"
 
 #, fuzzy
 msgid "Get it on"
@@ -452,9 +461,8 @@ msgstr "Inloggen"
 msgid "Edit project"
 msgstr "Project aanpassen"
 
-#, fuzzy
 msgid "Import project"
-msgstr "Project aanpassen"
+msgstr "Project importeren"
 
 msgid "Download project's data"
 msgstr "Projectgegevens downloaden"
@@ -520,6 +528,9 @@ msgstr "Deelnemer toevoegen"
 msgid "Edit this participant"
 msgstr "Deelnemer toevoegen"
 
+msgid "Save"
+msgstr ""
+
 msgid "john.doe@example.com, mary.moe@site.com"
 msgstr "jan.jansen@voorbeeld.nl, maria.magdalena@website.nl"
 
@@ -529,22 +540,11 @@ msgstr "Downloaden"
 msgid "Disabled Project History"
 msgstr "Uitgeschakelde Projectgeschiedenis"
 
-msgid "Disabled Project History & IP Address Recording"
-msgstr "Uitgeschakelde Projecthistorie & IP-Adres Vastlegging"
-
 msgid "Enabled Project History"
 msgstr "Ingeschakelde Projectgeschiedenis"
 
-msgid "Disabled IP Address Recording"
-msgstr ""
-
-msgid "Enabled Project History & IP Address Recording"
-msgstr ""
-
-msgid "Enabled IP Address Recording"
-msgstr ""
-
-msgid "History Settings Changed"
+#, fuzzy
+msgid "History Settings Changed (legacy settings)"
 msgstr "Geschiedenisinstellingen Gewijzigd"
 
 #, python-format
@@ -554,27 +554,6 @@ msgstr ""
 #, python-format
 msgid "Bill %(name)s: %(property_name)s changed to %(after)s"
 msgstr ""
-
-msgid "Confirm Remove IP Adresses"
-msgstr ""
-
-msgid ""
-"Are you sure you want to delete all recorded IP addresses from this "
-"project?\n"
-"                The rest of the project history will be unaffected. This "
-"action cannot be undone."
-msgstr ""
-"Weet je zeker dat je alle vastgelegde IP-adressen wilt verwijderen van "
-"dit project?\n"
-"De rest van de projectgeschiedenis blijft onveranderd. Deze actie kan "
-"niet ongedaan worden gemaakt."
-
-#, fuzzy
-msgid "Confirm deletion"
-msgstr "Bevestig Verwijdering"
-
-msgid "Close"
-msgstr "Sluiten"
 
 msgid "Delete Confirmation"
 msgstr "Bevestiging Verwijdering"
@@ -586,6 +565,13 @@ msgstr ""
 "Weet je zeker dat je de gehele geschiedenis wilt verwijderen voor dit "
 "project? Deze actie kan niet ongedaan worden gemaakt."
 
+#, fuzzy
+msgid "Confirm deletion"
+msgstr "Bevestig Verwijdering"
+
+msgid "Close"
+msgstr "Sluiten"
+
 #, python-format
 msgid "Bill %(name)s: added %(owers_list_str)s to owers list"
 msgstr ""
@@ -593,6 +579,32 @@ msgstr ""
 #, python-format
 msgid "Bill %(name)s: removed %(owers_list_str)s from owers list"
 msgstr ""
+
+msgid "Details of the bill (before the change)"
+msgstr ""
+
+#, fuzzy
+msgid "Details of the bill"
+msgstr "Deze rekening bewerken"
+
+#, fuzzy
+msgid "Date:"
+msgstr "Datum"
+
+#, fuzzy
+msgid "Payer:"
+msgstr "Betaler"
+
+#, fuzzy
+msgid "Amount:"
+msgstr "Hoeveelheid"
+
+msgid "Owers:"
+msgstr ""
+
+#, fuzzy
+msgid "External link:"
+msgstr "Externe link"
 
 msgid "This project has history disabled. New actions won't appear below."
 msgstr ""
@@ -609,20 +621,6 @@ msgstr ""
 msgid "You can clear the project history to remove them."
 msgstr "Iemand heeft waarschijnlijk de projectgeschiedenis verwijderd."
 
-msgid ""
-"Some entries below contain IP addresses, even though this project has IP "
-"recording disabled. "
-msgstr ""
-
-msgid "Delete stored IP addresses"
-msgstr ""
-
-msgid "No IP Addresses to erase"
-msgstr "Geen IP-adressen te verwijderen"
-
-msgid "Delete Stored IP Addresses"
-msgstr "Verwijder opgeslagen IP-adressen"
-
 msgid "No history to erase"
 msgstr "Geen geschiedenis om te wissen"
 
@@ -633,15 +631,6 @@ msgid "Time"
 msgstr "Tijd"
 
 msgid "Event"
-msgstr ""
-
-msgid "IP address recording can be enabled on the settings page"
-msgstr ""
-
-msgid "IP address recording can be disabled on the settings page"
-msgstr ""
-
-msgid "From IP"
 msgstr ""
 
 #, fuzzy, python-format
@@ -671,23 +660,7 @@ msgid "Project settings modified"
 msgstr "Projectinstellingen gewijzigd"
 
 #, python-format
-msgid "Participant %(name)s deactivated"
-msgstr ""
-
-#, python-format
-msgid "Participant %(name)s reactivated"
-msgstr ""
-
-#, python-format
-msgid "Participant %(name)s renamed to %(new_name)s"
-msgstr ""
-
-#, python-format
 msgid "Bill %(name)s renamed to %(new_description)s"
-msgstr ""
-
-#, python-format
-msgid "Participant %(name)s: weight changed from %(old_weight)s to %(new_weight)s"
 msgstr ""
 
 msgid "Payer"
@@ -706,6 +679,22 @@ msgstr "Hoeveelheid in %(currency)s"
 #, fuzzy, python-format
 msgid "Bill %(name)s modified"
 msgstr "De rekening is aangepast"
+
+#, python-format
+msgid "Participant %(name)s deactivated"
+msgstr ""
+
+#, python-format
+msgid "Participant %(name)s reactivated"
+msgstr ""
+
+#, python-format
+msgid "Participant %(name)s renamed to %(new_name)s"
+msgstr ""
+
+#, python-format
+msgid "Participant %(name)s: weight changed from %(old_weight)s to %(new_weight)s"
+msgstr ""
 
 #, python-format
 msgid "Participant %(name)s modified"
@@ -826,7 +815,7 @@ msgstr "Mobiele app"
 msgid "Documentation"
 msgstr "Documentatie"
 
-msgid "Administation Dashboard"
+msgid "Administration Dashboard"
 msgstr "Administratie-overzicht"
 
 #, fuzzy
@@ -846,6 +835,14 @@ msgstr ""
 msgid "you sure?"
 msgstr "weet je het zeker?"
 
+#, fuzzy
+msgid "Hide filters"
+msgstr "Identificatie:"
+
+#, fuzzy
+msgid "Show filters"
+msgstr "Bestand kiezen"
+
 msgid "Invite people"
 msgstr "Anderen uitnodigen"
 
@@ -855,11 +852,52 @@ msgstr ""
 msgid "Older bills"
 msgstr ""
 
+msgid "Toggle filters"
+msgstr ""
+
 msgid "You should start by adding participants"
 msgstr "Begin met het toevoegen van deelnemers"
 
 msgid "Add a new bill"
 msgstr "Nieuwe rekening toevoegen"
+
+msgid "Search"
+msgstr ""
+
+#, fuzzy
+msgid "Search in For what?"
+msgstr "Voor wat?"
+
+#, fuzzy
+msgid "Any payer"
+msgstr "Betaler"
+
+msgid "Start date"
+msgstr ""
+
+#, fuzzy
+msgid "End date"
+msgstr "Datum"
+
+#, fuzzy
+msgid "Amount min"
+msgstr "Hoeveelheid"
+
+msgid "Min cost"
+msgstr ""
+
+#, fuzzy
+msgid "Amount max"
+msgstr "Hoeveelheid"
+
+msgid "Max cost"
+msgstr ""
+
+msgid "Filter"
+msgstr ""
+
+msgid "Clear filters"
+msgstr ""
 
 msgid "For what?"
 msgstr "Voor wat?"
@@ -967,6 +1005,17 @@ msgstr "Wie betaalt?"
 msgid "To whom?"
 msgstr "Aan wie?"
 
+#, fuzzy
+msgid "Settled?"
+msgstr "Schikken"
+
+msgid "Click here to record that the money transfer has been done"
+msgstr ""
+
+#, fuzzy
+msgid "Register settlement"
+msgstr "Schikken"
+
 msgid "Who?"
 msgstr "Wie?"
 
@@ -982,10 +1031,17 @@ msgstr "heractiveren"
 msgid "Paid"
 msgstr "Betaald"
 
-msgid "Spent"
-msgstr "Uitgegeven"
+msgid "Expenses"
+msgstr ""
 
-msgid "Expenses by Month"
+msgid "Direct transfer"
+msgstr ""
+
+#, fuzzy
+msgid "Received"
+msgstr "heractiveren"
+
+msgid "Expenses by month"
 msgstr ""
 
 msgid "Period"
@@ -1163,4 +1219,73 @@ msgstr "Periode"
 
 #~ msgid "You can directly share the following link via your prefered medium"
 #~ msgstr "Je kunt de volgende link direct delen"
+
+#~ msgid "Spent"
+#~ msgstr "Uitgegeven"
+
+#~ msgid "Expenses by Month"
+#~ msgstr ""
+
+#~ msgid "Use IP tracking for project history"
+#~ msgstr "IP-tracking voor projectgeschiedenis gebruiken"
+
+#~ msgid "Error deleting recorded IP addresses"
+#~ msgstr "Verwijder opgeslagen IP-adressen"
+
+#~ msgid "Deleted recorded IP addresses in project history."
+#~ msgstr ""
+
+#~ msgid "Disabled Project History & IP Address Recording"
+#~ msgstr "Uitgeschakelde Projecthistorie & IP-Adres Vastlegging"
+
+#~ msgid "Disabled IP Address Recording"
+#~ msgstr ""
+
+#~ msgid "Enabled Project History & IP Address Recording"
+#~ msgstr ""
+
+#~ msgid "Enabled IP Address Recording"
+#~ msgstr ""
+
+#~ msgid "Confirm Remove IP Adresses"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Are you sure you want to delete"
+#~ " all recorded IP addresses from this"
+#~ " project?\n"
+#~ "                The rest of the project"
+#~ " history will be unaffected. This "
+#~ "action cannot be undone."
+#~ msgstr ""
+#~ "Weet je zeker dat je alle "
+#~ "vastgelegde IP-adressen wilt verwijderen "
+#~ "van dit project?\n"
+#~ "De rest van de projectgeschiedenis "
+#~ "blijft onveranderd. Deze actie kan niet"
+#~ " ongedaan worden gemaakt."
+
+#~ msgid ""
+#~ "Some entries below contain IP addresses,"
+#~ " even though this project has IP "
+#~ "recording disabled. "
+#~ msgstr ""
+
+#~ msgid "Delete stored IP addresses"
+#~ msgstr ""
+
+#~ msgid "No IP Addresses to erase"
+#~ msgstr "Geen IP-adressen te verwijderen"
+
+#~ msgid "Delete Stored IP Addresses"
+#~ msgstr "Verwijder opgeslagen IP-adressen"
+
+#~ msgid "IP address recording can be enabled on the settings page"
+#~ msgstr ""
+
+#~ msgid "IP address recording can be disabled on the settings page"
+#~ msgstr ""
+
+#~ msgid "From IP"
+#~ msgstr ""
 

@@ -3,17 +3,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-29 14:24+0200\n"
+"POT-Creation-Date: 2026-07-21 23:16+0200\n"
 "PO-Revision-Date: 2022-02-13 16:54+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language: nb_NO\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/i"
 "-hate-money/i-hate-money/nb_NO/>\n"
-"Plural-Forms: nplurals=2; plural=n != 1\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.9.0\n"
+"Generated-By: Babel 2.16.0\n"
 
 #, python-format
 msgid "You have just created '%(project)s' to share your expenses"
@@ -48,9 +48,6 @@ msgstr "E-post"
 msgid "Enable project history"
 msgstr "Skru på prosjekthistorikk"
 
-msgid "Use IP tracking for project history"
-msgstr "Bruk IP-sporing for prosjekthistorikk"
-
 msgid "Default Currency"
 msgstr "Forvalgt valuta"
 
@@ -70,6 +67,10 @@ msgid ""
 msgstr ""
 "Dette prosjektet kan ikke settes til «Ingen valuta» fordi det inneholder "
 "regninger i flere valutaer."
+
+#, fuzzy
+msgid "Cannot change project currency because currency conversion is broken"
+msgstr "En forvalg valutainnstilling skrur på konvertering mellom regninger"
 
 msgid "Compatible with Cospend"
 msgstr ""
@@ -153,6 +154,10 @@ msgstr "En lenke til et eksternt dokument, i relasjon til denne regningen"
 msgid "For whom?"
 msgstr "For hvem?"
 
+#, fuzzy
+msgid "Bill Type"
+msgstr "Regningsoppføringer"
+
 msgid "Submit"
 msgstr "Send inn"
 
@@ -162,6 +167,10 @@ msgstr "Send inn og legg til ny"
 #, python-format
 msgid "Project default: %(currency)s"
 msgstr "Prosjektforvalg: %(currency)s"
+
+#, python-format
+msgid "Failed to convert from %(bill_currency)s currency to %(project_currency)s"
+msgstr ""
 
 msgid "Name"
 msgstr "Navn"
@@ -245,6 +254,10 @@ msgstr "Dette administratorpassordet er ikke rett. Kun %(num)d forsøk igjen."
 
 msgid "Provided token is invalid"
 msgstr "Angitt symbol er ugyldig"
+
+#, fuzzy, python-format
+msgid "This private code is not the right one. Only %(num)d attempts left."
+msgstr "Dette administratorpassordet er ikke rett. Kun %(num)d forsøk igjen."
 
 msgid "This private code is not the right one"
 msgstr "Denne private koden er ikke rett"
@@ -378,20 +391,24 @@ msgid "%(lang)s is not a supported language"
 msgstr ""
 
 #, fuzzy
+msgid "Error creating settlement bill"
+msgstr "Klarte ikke å slette regning"
+
+#, fuzzy
+msgid "Settlement"
+msgstr "Gjør opp"
+
+#, fuzzy
+msgid "Settlement bill has been successfully added"
+msgstr "Regningen har blitt lagt til"
+
+#, fuzzy
 msgid "Error deleting project history"
 msgstr "Skru på prosjekthistorikk"
 
 #, fuzzy
 msgid "Deleted project history."
 msgstr "Slettet prosjekthistorikk."
-
-#, fuzzy
-msgid "Error deleting recorded IP addresses"
-msgstr "Kunne ikke slette registrerte IP-adresser"
-
-#, fuzzy
-msgid "Deleted recorded IP addresses in project history."
-msgstr "Slettet registrerte IP-adresser fra prosjekthistorikk."
 
 msgid "Sorry, we were unable to find the page you've asked for."
 msgstr "Fant ikke siden du forespurte."
@@ -532,6 +549,9 @@ msgstr "Legg til deltager"
 msgid "Edit this participant"
 msgstr "Legg til deltager"
 
+msgid "Save"
+msgstr ""
+
 #, fuzzy
 msgid "john.doe@example.com, mary.moe@site.com"
 msgstr "ola@eksempel.no, kari@eksempel.no"
@@ -543,27 +563,11 @@ msgstr "Last nd"
 msgid "Disabled Project History"
 msgstr "Avskrudd prosjekthistorikk"
 
-#, fuzzy
-msgid "Disabled Project History & IP Address Recording"
-msgstr "Avskrudd prosjekthistorikk og IP-adresseregistrering"
-
 msgid "Enabled Project History"
 msgstr "Påskrudd prosjekthistorikk"
 
 #, fuzzy
-msgid "Disabled IP Address Recording"
-msgstr "Avskrudd IP-adresseregistrering"
-
-#, fuzzy
-msgid "Enabled Project History & IP Address Recording"
-msgstr "Påskrudd prosjekthistorikk og IP-adresseregistrering"
-
-#, fuzzy
-msgid "Enabled IP Address Recording"
-msgstr "Påskrudd IP-adresseregistrering"
-
-#, fuzzy
-msgid "History Settings Changed"
+msgid "History Settings Changed (legacy settings)"
 msgstr "Historikkinnstillinger endret"
 
 #, python-format
@@ -574,27 +578,6 @@ msgstr "Regningen %(name)s: %(property_name)s endret fra %(before)s til %(after)
 msgid "Bill %(name)s: %(property_name)s changed to %(after)s"
 msgstr "Regning %(name)s: %(property_name)s endret til %(after)s"
 
-#, fuzzy
-msgid "Confirm Remove IP Adresses"
-msgstr "Bekreft fjerning av IP-adresse"
-
-#, fuzzy
-msgid ""
-"Are you sure you want to delete all recorded IP addresses from this "
-"project?\n"
-"                The rest of the project history will be unaffected. This "
-"action cannot be undone."
-msgstr ""
-"Slett alle registrerte IP-adresser fra dette prosjektet?\n"
-"                Resten av prosjekthistorikken vil ikke bli påvirket. "
-"Dette kan ikke angres."
-
-msgid "Confirm deletion"
-msgstr "Bekreft sletting"
-
-msgid "Close"
-msgstr "Lukk"
-
 msgid "Delete Confirmation"
 msgstr "Slettingsbekreftelse"
 
@@ -604,6 +587,12 @@ msgid ""
 "cannot be undone."
 msgstr "Slett all historikken i prosjektet for godt? Dette kan ikke angres."
 
+msgid "Confirm deletion"
+msgstr "Bekreft sletting"
+
+msgid "Close"
+msgstr "Lukk"
+
 #, python-format
 msgid "Bill %(name)s: added %(owers_list_str)s to owers list"
 msgstr "Regning %(name)s: La til %(owers_list_str)s på eierlisten"
@@ -611,6 +600,32 @@ msgstr "Regning %(name)s: La til %(owers_list_str)s på eierlisten"
 #, python-format
 msgid "Bill %(name)s: removed %(owers_list_str)s from owers list"
 msgstr "Regning %(name)s: fjernet %(owers_list_str)s fra eierlisten"
+
+msgid "Details of the bill (before the change)"
+msgstr ""
+
+#, fuzzy
+msgid "Details of the bill"
+msgstr "Rediger denne regningen"
+
+#, fuzzy
+msgid "Date:"
+msgstr "Dato"
+
+#, fuzzy
+msgid "Payer:"
+msgstr "Betaler"
+
+#, fuzzy
+msgid "Amount:"
+msgstr "Beløp"
+
+msgid "Owers:"
+msgstr ""
+
+#, fuzzy
+msgid "External link:"
+msgstr "Ekstern lenke"
 
 msgid "This project has history disabled. New actions won't appear below."
 msgstr ""
@@ -628,25 +643,6 @@ msgstr ""
 msgid "You can clear the project history to remove them."
 msgstr "Noen tømte antagelig prosjekthistorikken."
 
-#, fuzzy
-msgid ""
-"Some entries below contain IP addresses, even though this project has IP "
-"recording disabled. "
-msgstr ""
-"Noen oppføringer nedenfor inneholder IP-adresser, selv om dette "
-"prosjektet har IP-registrering avskrudd. "
-
-msgid "Delete stored IP addresses"
-msgstr "Slett lagrede IP-adresser"
-
-#, fuzzy
-msgid "No IP Addresses to erase"
-msgstr "Ingen IP-adresser å slette"
-
-#, fuzzy
-msgid "Delete Stored IP Addresses"
-msgstr "Slett lagrede IP-adresser"
-
 msgid "No history to erase"
 msgstr "Ingen historikk å slette"
 
@@ -658,17 +654,6 @@ msgstr "Tid"
 
 msgid "Event"
 msgstr "Hendelse"
-
-#, fuzzy
-msgid "IP address recording can be enabled on the settings page"
-msgstr "IP-adresseregistrering kan skrus på fra innstillingssiden"
-
-#, fuzzy
-msgid "IP address recording can be disabled on the settings page"
-msgstr "IP-adresseregistrering kan skrus av på innstillingssiden"
-
-msgid "From IP"
-msgstr "Fra IP"
 
 #, python-format
 msgid "Project %(name)s added"
@@ -696,25 +681,9 @@ msgstr "Prosjektets e-postkontaktadresse endret til %(new_email)s"
 msgid "Project settings modified"
 msgstr "Prosjektinnstillinger endret"
 
-#, fuzzy, python-format
-msgid "Participant %(name)s deactivated"
-msgstr "Deltageren %(name)s ble deaktivert"
-
-#, fuzzy, python-format
-msgid "Participant %(name)s reactivated"
-msgstr "Deltageren %(name)s ble reaktivert"
-
-#, python-format
-msgid "Participant %(name)s renamed to %(new_name)s"
-msgstr "Deltageren %(name)s fikk sitt navn endret til %(new_name)s"
-
 #, python-format
 msgid "Bill %(name)s renamed to %(new_description)s"
 msgstr "Regningen %(name)s fikk sitt navn endret til %(new_description)s"
-
-#, fuzzy, python-format
-msgid "Participant %(name)s: weight changed from %(old_weight)s to %(new_weight)s"
-msgstr "Deltager %(name)s: vekting endret fra %(old_weight)s til %(new_weight)s"
 
 msgid "Payer"
 msgstr "Betaler"
@@ -732,6 +701,22 @@ msgstr "Beløp i %(currency)s"
 #, python-format
 msgid "Bill %(name)s modified"
 msgstr "Regningen %(name)s har blitt endret"
+
+#, fuzzy, python-format
+msgid "Participant %(name)s deactivated"
+msgstr "Deltageren %(name)s ble deaktivert"
+
+#, fuzzy, python-format
+msgid "Participant %(name)s reactivated"
+msgstr "Deltageren %(name)s ble reaktivert"
+
+#, python-format
+msgid "Participant %(name)s renamed to %(new_name)s"
+msgstr "Deltageren %(name)s fikk sitt navn endret til %(new_name)s"
+
+#, fuzzy, python-format
+msgid "Participant %(name)s: weight changed from %(old_weight)s to %(new_weight)s"
+msgstr "Deltager %(name)s: vekting endret fra %(old_weight)s til %(new_weight)s"
 
 #, python-format
 msgid "Participant %(name)s modified"
@@ -855,7 +840,7 @@ msgstr "Mobilprogram"
 msgid "Documentation"
 msgstr "Dokumentasjon"
 
-msgid "Administation Dashboard"
+msgid "Administration Dashboard"
 msgstr "Administrasjonsoversiktspanel"
 
 #, fuzzy
@@ -876,6 +861,14 @@ msgstr "%(amount)s hver"
 msgid "you sure?"
 msgstr "er du sikker?"
 
+#, fuzzy
+msgid "Hide filters"
+msgstr "Identifikator:"
+
+#, fuzzy
+msgid "Show filters"
+msgstr "Velg fil"
+
 msgid "Invite people"
 msgstr "Inviter folk"
 
@@ -885,11 +878,52 @@ msgstr "Nyere regninger"
 msgid "Older bills"
 msgstr "Eldre regninger"
 
+msgid "Toggle filters"
+msgstr ""
+
 msgid "You should start by adding participants"
 msgstr "Du kan starte ved å legge til deltagere"
 
 msgid "Add a new bill"
 msgstr "Legg til en ny regning"
+
+msgid "Search"
+msgstr ""
+
+#, fuzzy
+msgid "Search in For what?"
+msgstr "For hva?"
+
+#, fuzzy
+msgid "Any payer"
+msgstr "Betaler"
+
+msgid "Start date"
+msgstr ""
+
+#, fuzzy
+msgid "End date"
+msgstr "Dato"
+
+#, fuzzy
+msgid "Amount min"
+msgstr "Beløp"
+
+msgid "Min cost"
+msgstr ""
+
+#, fuzzy
+msgid "Amount max"
+msgstr "Beløp"
+
+msgid "Max cost"
+msgstr ""
+
+msgid "Filter"
+msgstr ""
+
+msgid "Clear filters"
+msgstr ""
 
 msgid "For what?"
 msgstr "For hva?"
@@ -999,6 +1033,17 @@ msgstr "Hvem betaler?"
 msgid "To whom?"
 msgstr "Til hvem?"
 
+#, fuzzy
+msgid "Settled?"
+msgstr "Gjør opp"
+
+msgid "Click here to record that the money transfer has been done"
+msgstr ""
+
+#, fuzzy
+msgid "Register settlement"
+msgstr "Gjør opp"
+
 msgid "Who?"
 msgstr "Hvem?"
 
@@ -1015,10 +1060,19 @@ msgstr "skru på igjen"
 msgid "Paid"
 msgstr "Betalt"
 
-msgid "Spent"
-msgstr "Forbrukt"
+#, fuzzy
+msgid "Expenses"
+msgstr "Utgifter per måned"
 
-msgid "Expenses by Month"
+msgid "Direct transfer"
+msgstr ""
+
+#, fuzzy
+msgid "Received"
+msgstr "skru på igjen"
+
+#, fuzzy
+msgid "Expenses by month"
 msgstr "Utgifter per måned"
 
 msgid "Period"
@@ -1338,4 +1392,71 @@ msgstr "Periode"
 
 #~ msgid "You can directly share the following link via your prefered medium"
 #~ msgstr "Du kan dele denne lenken slik du ønsker"
+
+#~ msgid "Spent"
+#~ msgstr "Forbrukt"
+
+#~ msgid "Use IP tracking for project history"
+#~ msgstr "Bruk IP-sporing for prosjekthistorikk"
+
+#~ msgid "Error deleting recorded IP addresses"
+#~ msgstr "Kunne ikke slette registrerte IP-adresser"
+
+#~ msgid "Deleted recorded IP addresses in project history."
+#~ msgstr "Slettet registrerte IP-adresser fra prosjekthistorikk."
+
+#~ msgid "Disabled Project History & IP Address Recording"
+#~ msgstr "Avskrudd prosjekthistorikk og IP-adresseregistrering"
+
+#~ msgid "Disabled IP Address Recording"
+#~ msgstr "Avskrudd IP-adresseregistrering"
+
+#~ msgid "Enabled Project History & IP Address Recording"
+#~ msgstr "Påskrudd prosjekthistorikk og IP-adresseregistrering"
+
+#~ msgid "Enabled IP Address Recording"
+#~ msgstr "Påskrudd IP-adresseregistrering"
+
+#~ msgid "Confirm Remove IP Adresses"
+#~ msgstr "Bekreft fjerning av IP-adresse"
+
+#~ msgid ""
+#~ "Are you sure you want to delete"
+#~ " all recorded IP addresses from this"
+#~ " project?\n"
+#~ "                The rest of the project"
+#~ " history will be unaffected. This "
+#~ "action cannot be undone."
+#~ msgstr ""
+#~ "Slett alle registrerte IP-adresser fra dette prosjektet?\n"
+#~ "                Resten av prosjekthistorikken "
+#~ "vil ikke bli påvirket. Dette kan "
+#~ "ikke angres."
+
+#~ msgid ""
+#~ "Some entries below contain IP addresses,"
+#~ " even though this project has IP "
+#~ "recording disabled. "
+#~ msgstr ""
+#~ "Noen oppføringer nedenfor inneholder IP-"
+#~ "adresser, selv om dette prosjektet har"
+#~ " IP-registrering avskrudd. "
+
+#~ msgid "Delete stored IP addresses"
+#~ msgstr "Slett lagrede IP-adresser"
+
+#~ msgid "No IP Addresses to erase"
+#~ msgstr "Ingen IP-adresser å slette"
+
+#~ msgid "Delete Stored IP Addresses"
+#~ msgstr "Slett lagrede IP-adresser"
+
+#~ msgid "IP address recording can be enabled on the settings page"
+#~ msgstr "IP-adresseregistrering kan skrus på fra innstillingssiden"
+
+#~ msgid "IP address recording can be disabled on the settings page"
+#~ msgstr "IP-adresseregistrering kan skrus av på innstillingssiden"
+
+#~ msgid "From IP"
+#~ msgstr "Fra IP"
 

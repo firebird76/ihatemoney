@@ -36,10 +36,10 @@ def setup_database(app):
 
     def _pre_alembic_db():
         """Checks if we are migrating from a pre-alembic ihatemoney"""
-        con = db.engine.connect()
-        tables_exist = db.engine.dialect.has_table(con, "project")
-        alembic_setup = db.engine.dialect.has_table(con, "alembic_version")
-        return tables_exist and not alembic_setup
+        with db.engine.connect() as con:
+            tables_exist = db.engine.dialect.has_table(con, "project")
+            alembic_setup = db.engine.dialect.has_table(con, "alembic_version")
+            return tables_exist and not alembic_setup
 
     sqlalchemy_url = app.config.get("SQLALCHEMY_DATABASE_URI")
     if sqlalchemy_url.startswith("sqlite:////tmp"):
@@ -54,13 +54,12 @@ def setup_database(app):
     Migrate(app, db)
     migrations_path = os.path.join(app.root_path, "migrations")
 
-    if _pre_alembic_db():
-        with app.app_context():
+    with app.app_context():
+        if _pre_alembic_db():
             # fake the first migration
             stamp(migrations_path, revision="b9a10d5d63ce")
 
-    # auto-execute migrations on runtime
-    with app.app_context():
+        # auto-execute migrations on runtime
         upgrade(migrations_path)
 
 
@@ -103,7 +102,7 @@ def validate_configuration(app):
         if "MAIL_DEFAULT_SENDER" not in app.config:
             app.config["MAIL_DEFAULT_SENDER"] = default_settings.DEFAULT_MAIL_SENDER
 
-    if type(app.config["MAIL_DEFAULT_SENDER"]) == tuple:
+    if type(app.config["MAIL_DEFAULT_SENDER"]) is tuple:
         (name, address) = app.config["MAIL_DEFAULT_SENDER"]
         app.config["MAIL_DEFAULT_SENDER"] = f"{name} <{address}>"
         warnings.warn(

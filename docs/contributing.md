@@ -1,5 +1,37 @@
 # Contributing
 
+## Current direction (as of 2024)
+
+Ihatemoney was started in 2011, and we believe the project has reached a certain
+level of maturity now. The overall energy of contributors is not as high as it
+used to be.
+
+In addition, there are now several self-hosted alternatives (for instance
+[cospend](https://github.com/julien-nc/cospend-nc/tree/main),
+[spliit](https://github.com/spliit-app/spliit)).
+
+As maintainers, we believe that the project is still relevant but should gear
+towards some kind of "maintenance mode":
+
+* **Simplicity** is now the main goal of the project. It has always been a compass
+for the project, and the resulting software is appreciated by both users and
+server administrators. For us, "simplicity" is positive and encompasses both
+technical aspects (very few javascript code, manageable dependencies, small code
+size...) and user-visible aspects (straightforward interface, no need to create
+accounts for people you invite, same web interface on mobile...)
+
+* **Stability** is prioritized over adding major new features. We found ourselves
+complexifying the codebase (and the interface) while accepting some
+contributions. Our goal now is to have a minimal set of features that do most of
+the job. We believe this will help lower the maintainance burden.
+
+* **User interface and user experience improvements** are always super welcome !
+
+It is still possible to propose new features, but they should fit into
+this new direction. Simplicity of the UI/UX and simplicity of the technical
+implementation will be the main factors when deciding to accept new features.
+
+
 ## How to contribute
 
 You would like to contribute? First, thanks a bunch! This project is a
@@ -46,7 +78,16 @@ Thanks again!
 (setup-dev-environment)=
 ## Set up a dev environment
 
-You must develop on top of the Git master branch:
+### Requirements
+
+In addition to general {ref}`requirements<system-requirements>`, you will need
+**uv**. It recommended to install uv [system
+wide](https://docs.astral.sh/uv/getting-started/installation/#standalone-installer)
+as it is a kind of replacement for pip.
+
+### Getting the sources
+
+You must develop on top of the Git main branch:
 
     git clone https://github.com/spiral-project/ihatemoney.git
 
@@ -151,7 +192,7 @@ We are using [black](https://black.readthedocs.io/en/stable/) and
 Python files in this project. Be sure to run it locally on your files.
 To do so, just run:
 
-    make black isort
+    make lint
 
 You can also integrate them with your dev environment (as a
 *format-on-save* hook, for instance).
@@ -208,7 +249,7 @@ You then need to write the migration steps yourself.
 The documentation is using
 [sphinx](http://www.sphinx-doc.org/en/stable/) and its source is located
 inside the [docs
-folder](https://github.com/spiral-project/ihatemoney/tree/master/docs).
+folder](https://github.com/spiral-project/ihatemoney/tree/main/docs).
 
 Install doc dependencies (within the virtual environment, if any):
 
@@ -263,11 +304,9 @@ In order to issue a new release, follow the following steps:
 
 -   Merge remaining pull requests;
 
--   Switch to the master branch;
+-   Switch to the main branch;
 
 -   Update `CHANGELOG.md` with the last changes;
-
--   Update `CONTRIBUTORS` (instructions inside the file);
 
 -   If needed, recompress assets. It requires zopflipng and ImageMagick
     `mogrify`:
@@ -280,9 +319,9 @@ In order to issue a new release, follow the following steps:
 
 -   If you're not completely sure of yourself at this point, you can
     optionally: create a new branch, push it, open a pull request, check
-    the CI result, and then merge the branch to master.
+    the CI result, and then merge the branch to main.
 
-Once this is done, make sure your local git repository is on the master
+Once this is done, make sure your local git repository is on the main
 branch, and let's release!:
 
     make release

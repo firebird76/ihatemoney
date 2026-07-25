@@ -8,6 +8,8 @@ Basically, this blueprint takes care of the authentication and provides
 some shortcuts to make your life better when coding (see `pull_project`
 and `add_project_id` for a quick overview)
 """
+
+import datetime
 from functools import wraps
 import hashlib
 import json
@@ -54,10 +56,11 @@ from ihatemoney.forms import (
     ProjectForm,
     ProjectFormWithCaptcha,
     ResetPasswordForm,
+    SettlementForm,
     get_billform_for,
 )
-from ihatemoney.history import get_history, get_history_queries, purge_history
-from ihatemoney.models import Bill, LoggingMode, Person, Project, db
+from ihatemoney.history import get_history, purge_history
+from ihatemoney.models import Bill, BillType, LoggingMode, Person, Project, db
 from ihatemoney.utils import (
     Redirect303,
     csv2list_of_dicts,
@@ -135,6 +138,11 @@ def set_show_admin_dashboard_link(endpoint, values):
     g.logout_form = LogoutForm()
 
 
+@main.context_processor
+def add_template_variables():
+    return {"SITE_NAME": current_app.config.get("SITE_NAME")}
+
+
 @main.url_value_preprocessor
 def pull_project(endpoint, values):
     """When a request contains a project_id value, transform it directly
@@ -171,20 +179,23 @@ def health():
     return "OK"
 
 
-def admin_limit(limit):
-    return make_response(
-        render_template(
-            "admin.html",
-            breached_limit=limit,
-            limit_message=_("Too many failed login attempts."),
+def login_limit(template_name):
+    def handler(limit):
+        return make_response(
+            render_template(
+                template_name,
+                breached_limit=limit,
+                limit_message=_("Too many failed login attempts."),
+            )
         )
-    )
+
+    return handler
 
 
 @main.route("/admin", methods=["GET", "POST"])
 @limiter.limit(
     "3/minute",
-    on_breach=admin_limit,
+    on_breach=login_limit("admin.html"),
     methods=["POST"],
 )
 def admin():
@@ -247,6 +258,11 @@ def join_project(token):
 
 
 @main.route("/authenticate", methods=["GET", "POST"])
+@limiter.limit(
+    "3/minute",
+    on_breach=login_limit("authenticate.html"),
+    methods=["POST"],
+)
 def authenticate(project_id=None):
     """Authentication form"""
     form = AuthenticationForm()
@@ -275,7 +291,14 @@ def authenticate(project_id=None):
         setattr(g, "project", project)
         return redirect(url_for(".list_bills"))
     if is_post_auth and not check_password_hash(project.password, form.password.data):
-        msg = _("This private code is not the right one")
+        if limiter.current_limit is not None:
+            msg = _(
+                "This private code is not the right one. Only %(num)d attempts left.",
+                # If the limiter is disabled, there is no current limit
+                num=limiter.current_limit.remaining,
+            )
+        else:
+            msg = _("This private code is not the right one")
         form["password"].errors = [msg]
 
     return render_template("authenticate.html", form=form)
@@ -437,8 +460,6 @@ def edit_project():
 
         if g.project.logging_preference != LoggingMode.DISABLED:
             edit_form.project_history.data = True
-            if g.project.logging_preference == LoggingMode.RECORD_IP:
-                edit_form.ip_recording.data = True
 
         edit_form.contact_email.data = g.project.contact_email
         edit_form.default_currency.data = g.project.default_currency
@@ -471,6 +492,7 @@ def import_project():
             # Check data
             attr = [
                 "amount",
+                "bill_type",
                 "currency",
                 "date",
                 "owers",
@@ -480,6 +502,8 @@ def import_project():
             ]
             currencies = set()
             for b in bills:
+                if "bill_type" not in b:
+                    b["bill_type"] = BillType.default_value()
                 if b.get("currency", "") in ["", "XXX"]:
                     b["currency"] = g.project.default_currency
                 for a in attr:
@@ -645,37 +669,64 @@ def list_bills():
     bill_form = get_billform_for(g.project)
     # Used for CSRF validation
     csrf_form = EmptyForm()
-    # set the last selected payer and last selected owers as default choice if they exist
-    if "last_selected_payer_per_project" in session:
-        if g.project.id in session["last_selected_payer_per_project"]:
-            bill_form.payer.data = session["last_selected_payer_per_project"][
-                g.project.id
-            ]
-    # for backward compatibility, should be removed at some point
-    else:
-        if "last_selected_payer" in session:
-            bill_form.payer.data = session["last_selected_payer"]
-    if (
-        "last_selected_payed_for" in session
-        and g.project.id in session["last_selected_payed_for"]
-    ):
-        bill_form.payed_for.data = session["last_selected_payed_for"][g.project.id]
 
-    # Each item will be a (weight_sum, Bill) tuple.
-    # TODO: improve this awkward result using column_property:
-    # https://docs.sqlalchemy.org/en/14/orm/mapped_sql_expr.html.
-    weighted_bills = g.project.get_bill_weights_ordered().paginate(
-        per_page=100, error_out=True
-    )
+    # filters from form
+    filters = {
+        "search": request.args.get("search", "").strip(),
+        "date_from": request.args.get("date_from", "").strip(),
+        "date_to": request.args.get("date_to", "").strip(),
+        "amount_min": request.args.get("amount_min", "").strip().replace(",", "."),
+        "amount_max": request.args.get("amount_max", "").strip().replace(",", "."),
+        "payer": request.args.get("payer", "").strip(),
+    }
+
+    filters_active = any(filters.values())
+
+    # standard query if no filters are active
+    if not filters_active:
+        # Each item will be a (weight_sum, Bill) tuple.
+        # TODO: improve this awkward result using column_property:
+        # https://docs.sqlalchemy.org/en/14/orm/mapped_sql_expr.html.
+        weighted_bills = g.project.get_bill_weights_ordered()
+    else:
+        query = g.project.get_bills_unordered()
+
+        if filters["search"]:
+            query = query.filter(Bill.what.ilike(f'%{filters["search"]}%'))
+
+        if filters["date_from"]:
+            query = query.filter(Bill.date >= datetime.datetime.strptime(filters["date_from"], '%Y-%m-%d').date())
+
+        if filters["date_to"]:
+            query = query.filter(Bill.date <= datetime.datetime.strptime(filters["date_to"], '%Y-%m-%d').date())
+
+        if filters["amount_min"]:
+            query = query.filter(Bill.amount >= float(filters["amount_min"]))
+
+        if filters["amount_max"]:
+            query = query.filter(Bill.amount <= float(filters["amount_max"]))
+
+        if filters["payer"]:
+            query = query.filter(Bill.payer_id == filters["payer"])
+
+        filtered_bill_ids = query.with_entities(Bill.id).all()
+
+        weighted_bills = g.project.get_bill_weights_ordered().filter(
+            Bill.id.in_([bill.id for bill in filtered_bill_ids])
+        )
+
+    paginated_bills = weighted_bills.paginate(per_page=100, error_out=True)
 
     return render_template(
         "list_bills.html",
-        bills=weighted_bills,
+        bills=paginated_bills,
         member_form=MemberForm(g.project),
         bill_form=bill_form,
         csrf_form=csrf_form,
         add_bill=request.values.get("add_bill", False),
         current_view="list_bills",
+        search_active=filters_active,
+        **filters  # Unpack filter values for template use
     )
 
 
@@ -686,6 +737,7 @@ def add_member():
     if request.method == "POST":
         if form.validate():
             member = form.save(g.project, Person())
+            db.session.add(member)
             db.session.commit()
             flash(_("%(member)s has been added", member=member.name))
             return redirect(url_for(".list_bills"))
@@ -763,13 +815,14 @@ def add_bill():
     form = get_billform_for(g.project)
     if request.method == "POST":
         if form.validate():
-            # save last selected payer and last selected owers in session
+            # save last selected payerin session
             if "last_selected_payer_per_project" not in session:
                 session["last_selected_payer_per_project"] = {}
             session["last_selected_payer_per_project"][g.project.id] = form.payer.data
-            if "last_selected_payed_for" not in session:
-                session["last_selected_payed_for"] = {}
-            session["last_selected_payed_for"][g.project.id] = form.payed_for.data
+            # save last selected owers in session
+            if "last_selected_payed_for_per_project" not in session:
+                session["last_selected_payed_for_per_project"] = {}
+            session["last_selected_payed_for_per_project"][g.project.id] = form.payed_for.data
             session.update()
 
             db.session.add(form.export(g.project))
@@ -844,8 +897,50 @@ def change_lang(lang):
 @main.route("/<project_id>/settle_bills")
 def settle_bill():
     """Compute the sum each one have to pay to each other and display it"""
-    bills = g.project.get_transactions_to_settle_bill()
-    return render_template("settle_bills.html", bills=bills, current_view="settle_bill")
+    transactions = g.project.get_transactions_to_settle_bill()
+    settlement_form = SettlementForm()
+    return render_template(
+        "settle_bills.html",
+        transactions=transactions,
+        settlement_form=settlement_form,
+        current_view="settle_bill",
+    )
+
+
+@main.route("/<project_id>/settle", methods=["POST"])
+def add_settlement_bill():
+    """Create a bill to register a settlement"""
+    form = SettlementForm(id=g.project.id)
+    if not form.validate():
+        flash(
+            format_form_errors(form, _("Error creating settlement bill")),
+            category="danger",
+        )
+        return redirect(url_for(".settle_bill"))
+
+    # Ensure that the sender and receiver ID are valid and part of this project
+    receiver_id = form.receiver_id.data
+    sender_id = form.sender_id.data
+
+    if not g.project.has_member(sender_id):
+        return redirect(url_for(".settle_bill"))
+
+    settlement = Bill(
+        amount=form.amount.data,
+        date=datetime.datetime.today(),
+        owers=[Person.query.get(receiver_id, g.project)],
+        payer_id=sender_id,
+        project_default_currency=g.project.default_currency,
+        bill_type=BillType.REIMBURSEMENT,
+        what=_("Settlement"),
+    )
+    session.update()
+
+    db.session.add(settlement)
+    db.session.commit()
+
+    flash(_("Settlement bill has been successfully added"), category="success")
+    return redirect(url_for(".settle_bill"))
 
 
 @main.route("/<project_id>/history")
@@ -853,14 +948,11 @@ def history():
     """Query for the version entries associated with this project."""
     history = get_history(g.project, human_readable_names=True)
 
-    any_ip_addresses = any(event["ip"] for event in history)
-
     delete_form = DestructiveActionProjectForm()
     return render_template(
         "history.html",
         current_view="history",
         history=history,
-        any_ip_addresses=any_ip_addresses,
         LoggingMode=LoggingMode,
         OperationType=Operation,
         current_log_pref=g.project.logging_preference,
@@ -883,26 +975,6 @@ def erase_history():
 
     db.session.commit()
     flash(_("Deleted project history."))
-    return redirect(url_for(".history"))
-
-
-@main.route("/<project_id>/strip_ip_addresses", methods=["POST"])
-def strip_ip_addresses():
-    """Strip ip addresses from history entries associated with this project."""
-    form = DestructiveActionProjectForm(id=g.project.id)
-    if not form.validate():
-        flash(
-            format_form_errors(form, _("Error deleting recorded IP addresses")),
-            category="danger",
-        )
-        return redirect(url_for(".history"))
-
-    for query in get_history_queries(g.project):
-        for version_object in query.all():
-            version_object.transaction.remote_addr = None
-
-    db.session.commit()
-    flash(_("Deleted recorded IP addresses in project history."))
     return redirect(url_for(".history"))
 
 

@@ -1,19 +1,19 @@
+
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-29 14:24+0200\n"
-"PO-Revision-Date: 2023-12-10 10:05+0000\n"
-"Last-Translator: Oğuz Ersen <oguz@ersen.moe>\n"
-"Language-Team: Turkish <https://hosted.weblate.org/projects/i-hate-money/"
-"i-hate-money/tr/>\n"
+"POT-Creation-Date: 2026-07-21 23:16+0200\n"
+"PO-Revision-Date: 2026-05-20 20:51+0000\n"
+"Last-Translator: onurmaden <ronur.maden@gmail.com>\n"
 "Language: tr\n"
+"Language-Team: Turkish <https://hosted.weblate.org/projects/i-hate-"
+"money/i-hate-money/tr/>\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.3-dev\n"
-"Generated-By: Babel 2.9.0\n"
+"Generated-By: Babel 2.16.0\n"
 
 #, python-format
 msgid "You have just created '%(project)s' to share your expenses"
@@ -47,9 +47,6 @@ msgstr "E-posta"
 msgid "Enable project history"
 msgstr "Proje geçmişini etkinleştir"
 
-msgid "Use IP tracking for project history"
-msgstr "Proje geçmişi için IP izlemeyi kullan"
-
 msgid "Default Currency"
 msgstr "Öntanımlı Para Birimi"
 
@@ -70,6 +67,9 @@ msgid ""
 msgstr ""
 "Bu proje, birden fazla para biriminde faturalar içerdiğinden 'para birimi"
 " yok' olarak ayarlanamaz."
+
+msgid "Cannot change project currency because currency conversion is broken"
+msgstr "Kur dönüşümü yapılamadığından proje para birimi değiştirilemiyor"
 
 msgid "Compatible with Cospend"
 msgstr "Cospend ile uyumlu"
@@ -151,6 +151,9 @@ msgstr "Bu fatura ile ilgili harici bir belgenin bağlantısı"
 msgid "For whom?"
 msgstr "Kim için?"
 
+msgid "Bill Type"
+msgstr "Harcama türü"
+
 msgid "Submit"
 msgstr "Gönder"
 
@@ -160,6 +163,12 @@ msgstr "Gönder ve yeni bir tane ekle"
 #, python-format
 msgid "Project default: %(currency)s"
 msgstr "Proje öntanımlı değeri: %(currency)s"
+
+#, python-format
+msgid "Failed to convert from %(bill_currency)s currency to %(project_currency)s"
+msgstr ""
+"%(bill_currency)s para biriminden %(project_currency)s para birimine "
+"dönüştürme başarısız oldu"
 
 msgid "Name"
 msgstr "Ad"
@@ -240,6 +249,10 @@ msgstr "Bu yönetici parolası doğru değil. Yalnızca %(num)d tane deneme kald
 msgid "Provided token is invalid"
 msgstr "Sağlanan belirteç geçersiz"
 
+#, fuzzy, python-format
+msgid "This private code is not the right one. Only %(num)d attempts left."
+msgstr "Bu yönetici parolası doğru değil. Yalnızca %(num)d tane deneme kaldı."
+
 msgid "This private code is not the right one"
 msgstr "Bu özel kod doğru değil"
 
@@ -257,8 +270,8 @@ msgid ""
 "Sorry, there was an error while sending you an email with password reset "
 "instructions."
 msgstr ""
-"Maalesef, parola sıfırlama talimatlarını içeren e-posta gönderilirken bir "
-"hata oluştu."
+"Maalesef, parola sıfırlama talimatlarını içeren e-posta gönderilirken bir"
+" hata oluştu."
 
 msgid "No token provided"
 msgstr "Belirteç sağlanmadı"
@@ -357,17 +370,20 @@ msgstr "Fatura değiştirildi"
 msgid "%(lang)s is not a supported language"
 msgstr "%(lang)s dili desteklenmiyor"
 
+msgid "Error creating settlement bill"
+msgstr "Hesap kapatma işlemi oluşturulurken hata oluştu"
+
+msgid "Settlement"
+msgstr "Hesap kapatma"
+
+msgid "Settlement bill has been successfully added"
+msgstr "Hesap kapatma işlemi başarıyla eklendi"
+
 msgid "Error deleting project history"
 msgstr "Proje geçmişi silinirken hata oluştu"
 
 msgid "Deleted project history."
 msgstr "Proje geçmişi silindi."
-
-msgid "Error deleting recorded IP addresses"
-msgstr "Kaydedilen IP adresleri silinirken hata oluştu"
-
-msgid "Deleted recorded IP addresses in project history."
-msgstr "Proje geçmişinde kaydedilen IP adresleri silindi."
 
 msgid "Sorry, we were unable to find the page you've asked for."
 msgstr "Maalesef, istediğiniz sayfayı bulamadık."
@@ -498,6 +514,9 @@ msgstr "Katılımcı ekle"
 msgid "Edit this participant"
 msgstr "Bu katılımcıyı düzenle"
 
+msgid "Save"
+msgstr "Kaydet"
+
 msgid "john.doe@example.com, mary.moe@site.com"
 msgstr "john.doe@example.com, mary.moe@site.com"
 
@@ -507,22 +526,11 @@ msgstr "İndir"
 msgid "Disabled Project History"
 msgstr "Proje Geçmişi Devre Dışı"
 
-msgid "Disabled Project History & IP Address Recording"
-msgstr "Proje Geçmişi ve IP Adresi Kaydetme Devre Dışı"
-
 msgid "Enabled Project History"
 msgstr "Proje Geçmişi Etkin"
 
-msgid "Disabled IP Address Recording"
-msgstr "IP Adresi Kaydetme Devre Dışı"
-
-msgid "Enabled Project History & IP Address Recording"
-msgstr "Proje Geçmişi ve IP Adresi Kaydetme Etkin"
-
-msgid "Enabled IP Address Recording"
-msgstr "IP Adresi Kaydetme Etkin"
-
-msgid "History Settings Changed"
+#, fuzzy
+msgid "History Settings Changed (legacy settings)"
 msgstr "Geçmiş Ayarları Değişti"
 
 #, python-format
@@ -535,26 +543,6 @@ msgstr ""
 msgid "Bill %(name)s: %(property_name)s changed to %(after)s"
 msgstr "Fatura %(name)s: %(property_name)s, %(after)s olarak değiştirildi"
 
-msgid "Confirm Remove IP Adresses"
-msgstr "IP Adresini Kaldırmayı Onayla"
-
-msgid ""
-"Are you sure you want to delete all recorded IP addresses from this "
-"project?\n"
-"                The rest of the project history will be unaffected. This "
-"action cannot be undone."
-msgstr ""
-"Kaydedilen tüm IP adreslerini bu projeden silmek istediğinize emin "
-"misiniz?\n"
-"                Proje geçmişinin geri kalanı bundan etkilenmeyecektir. Bu"
-" işlem geri alınamaz."
-
-msgid "Confirm deletion"
-msgstr "Silmeyi onayla"
-
-msgid "Close"
-msgstr "Kapat"
-
 msgid "Delete Confirmation"
 msgstr "Onaylamayı Sil"
 
@@ -565,6 +553,12 @@ msgstr ""
 "Bu proje için tüm geçmişi silmek istediğinize emin misiniz? Bu işlem geri"
 " alınamaz."
 
+msgid "Confirm deletion"
+msgstr "Silmeyi onayla"
+
+msgid "Close"
+msgstr "Kapat"
+
 #, python-format
 msgid "Bill %(name)s: added %(owers_list_str)s to owers list"
 msgstr "Fatura %(name)s: %(owers_list_str)s borçlular listesine eklendi"
@@ -573,9 +567,31 @@ msgstr "Fatura %(name)s: %(owers_list_str)s borçlular listesine eklendi"
 msgid "Bill %(name)s: removed %(owers_list_str)s from owers list"
 msgstr "Fatura %(name)s: %(owers_list_str)s borçlular listesinden kaldırıldı"
 
+msgid "Details of the bill (before the change)"
+msgstr "Harcama detayları (değişiklikten önce)"
+
+msgid "Details of the bill"
+msgstr "Harcama detayları"
+
+msgid "Date:"
+msgstr "Tarih:"
+
+msgid "Payer:"
+msgstr "Ödeyen:"
+
+msgid "Amount:"
+msgstr "Miktar:"
+
+msgid "Owers:"
+msgstr "Borçlu:"
+
+msgid "External link:"
+msgstr "Harici bağlantı:"
+
 msgid "This project has history disabled. New actions won't appear below."
 msgstr ""
-"Bu projenin geçmişi devre dışı bırakıldı. Yeni eylemler aşağıda görünmeyecek."
+"Bu projenin geçmişi devre dışı bırakıldı. Yeni eylemler aşağıda "
+"görünmeyecek."
 
 msgid "You can enable history on the settings page."
 msgstr "Geçmişi ayarlar sayfasından etkinleştirebilirsiniz."
@@ -590,22 +606,6 @@ msgstr ""
 msgid "You can clear the project history to remove them."
 msgstr "Bunları kaldırmak için proje geçmişini temizleyebilirsiniz."
 
-msgid ""
-"Some entries below contain IP addresses, even though this project has IP "
-"recording disabled. "
-msgstr ""
-"Bu projede IP kaydetme devre dışı bırakılmış olsa da aşağıdaki bazı "
-"girdiler IP adresleri içermektedir. "
-
-msgid "Delete stored IP addresses"
-msgstr "Kaydedilen IP adreslerini sil"
-
-msgid "No IP Addresses to erase"
-msgstr "Silinecek IP adresi yok"
-
-msgid "Delete Stored IP Addresses"
-msgstr "Kaydedilen IP Adreslerini Sil"
-
 msgid "No history to erase"
 msgstr "Silinecek geçmiş yok"
 
@@ -617,15 +617,6 @@ msgstr "Zaman"
 
 msgid "Event"
 msgstr "Etkinlik"
-
-msgid "IP address recording can be enabled on the settings page"
-msgstr "IP adresi kaydetme ayarlar sayfasında etkinleştirilebilir"
-
-msgid "IP address recording can be disabled on the settings page"
-msgstr "IP adresi kaydetme ayarlar sayfasında devre dışı bırakılabilir"
-
-msgid "From IP"
-msgstr "IP'den"
 
 #, python-format
 msgid "Project %(name)s added"
@@ -654,26 +645,8 @@ msgid "Project settings modified"
 msgstr "Proje ayarları değiştirildi"
 
 #, python-format
-msgid "Participant %(name)s deactivated"
-msgstr "Katılımcı %(name)s devre dışı bırakıldı"
-
-#, python-format
-msgid "Participant %(name)s reactivated"
-msgstr "Katılımcı %(name)s yeniden etkinleştirildi"
-
-#, python-format
-msgid "Participant %(name)s renamed to %(new_name)s"
-msgstr "Katılımcı %(name)s, %(new_name)s olarak yeniden adlandırıldı"
-
-#, python-format
 msgid "Bill %(name)s renamed to %(new_description)s"
 msgstr "Fatura %(name)s, %(new_description)s olarak yeniden adlandırıldı"
-
-#, python-format
-msgid "Participant %(name)s: weight changed from %(old_weight)s to %(new_weight)s"
-msgstr ""
-"Katılımcı %(name)s: %(old_weight)s olan ağırlık %(new_weight)s olarak "
-"değiştirildi"
 
 msgid "Payer"
 msgstr "Mükellefi"
@@ -691,6 +664,24 @@ msgstr "%(currency)s olarak miktar"
 #, python-format
 msgid "Bill %(name)s modified"
 msgstr "%(name)s faturası değiştirildi"
+
+#, python-format
+msgid "Participant %(name)s deactivated"
+msgstr "Katılımcı %(name)s devre dışı bırakıldı"
+
+#, python-format
+msgid "Participant %(name)s reactivated"
+msgstr "Katılımcı %(name)s yeniden etkinleştirildi"
+
+#, python-format
+msgid "Participant %(name)s renamed to %(new_name)s"
+msgstr "Katılımcı %(name)s, %(new_name)s olarak yeniden adlandırıldı"
+
+#, python-format
+msgid "Participant %(name)s: weight changed from %(old_weight)s to %(new_weight)s"
+msgstr ""
+"Katılımcı %(name)s: %(old_weight)s olan ağırlık %(new_weight)s olarak "
+"değiştirildi"
 
 #, python-format
 msgid "Participant %(name)s modified"
@@ -811,7 +802,7 @@ msgstr "Telefon Uygulaması"
 msgid "Documentation"
 msgstr "Belgelendirme"
 
-msgid "Administation Dashboard"
+msgid "Administration Dashboard"
 msgstr "Yönetici Gösterge Paneli"
 
 msgid "Legal information"
@@ -830,6 +821,14 @@ msgstr "her biri %(amount)s"
 msgid "you sure?"
 msgstr "emin misiniz?"
 
+#, fuzzy
+msgid "Hide filters"
+msgstr "Tanımlayıcı:"
+
+#, fuzzy
+msgid "Show filters"
+msgstr "Dosya seç"
+
 msgid "Invite people"
 msgstr "İnsanları davet et"
 
@@ -839,11 +838,52 @@ msgstr "Daha yeni faturalar"
 msgid "Older bills"
 msgstr "Daha eski faturalar"
 
+msgid "Toggle filters"
+msgstr ""
+
 msgid "You should start by adding participants"
 msgstr "Katılımcıları ekleyerek başlamalısınız"
 
 msgid "Add a new bill"
 msgstr "Yeni bir fatura ekle"
+
+msgid "Search"
+msgstr ""
+
+#, fuzzy
+msgid "Search in For what?"
+msgstr "Ne için?"
+
+#, fuzzy
+msgid "Any payer"
+msgstr "Mükellefi"
+
+msgid "Start date"
+msgstr ""
+
+#, fuzzy
+msgid "End date"
+msgstr "Tarih"
+
+#, fuzzy
+msgid "Amount min"
+msgstr "Miktar"
+
+msgid "Min cost"
+msgstr ""
+
+#, fuzzy
+msgid "Amount max"
+msgstr "Miktar"
+
+msgid "Max cost"
+msgstr ""
+
+msgid "Filter"
+msgstr ""
+
+msgid "Clear filters"
+msgstr ""
 
 msgid "For what?"
 msgstr "Ne için?"
@@ -903,9 +943,10 @@ msgid ""
 "settings such as changing the private code or deleting the whole project."
 msgstr ""
 "Kişileri davet etmenin en kolay yolu onlara aşağıdaki davet bağlantısını "
-"vermektir:<br />Projeye erişebilecek, katılımcıları yönetebilecek, fatura "
-"ekleyebilecek/düzenleyebilecek/silebileceklerdir. Ancak, özel kodu "
-"değiştirme veya tüm projeyi silme gibi önemli ayarlara erişemeyeceklerdir."
+"vermektir:<br />Projeye erişebilecek, katılımcıları yönetebilecek, fatura"
+" ekleyebilecek/düzenleyebilecek/silebileceklerdir. Ancak, özel kodu "
+"değiştirme veya tüm projeyi silme gibi önemli ayarlara "
+"erişemeyeceklerdir."
 
 msgid "Scan QR code"
 msgstr "QR kodunu tarayın"
@@ -921,9 +962,9 @@ msgid ""
 "to notify about the creation of this project. We will send them an email "
 "with the invitation link."
 msgstr ""
-"Bu projenin oluşturulması hakkında bilgilendirmek istediğiniz kişilerin e-"
-"posta adreslerinin bir listesini (virgülle ayrılmış) belirtin. Onlara davet "
-"bağlantısını içeren bir e-posta göndereceğiz."
+"Bu projenin oluşturulması hakkında bilgilendirmek istediğiniz kişilerin "
+"e-posta adreslerinin bir listesini (virgülle ayrılmış) belirtin. Onlara "
+"davet bağlantısını içeren bir e-posta göndereceğiz."
 
 msgid "Share Identifier & code"
 msgstr "Tanımlayıcıyı ve Kodu Paylaş"
@@ -935,9 +976,9 @@ msgid ""
 " or project email address, or even deleting the whole project."
 msgstr ""
 "Proje tanımlayıcısını ve özel kodu herhangi bir iletişim aracıyla "
-"paylaşabilirsiniz.<br />Özel koda sahip olan herkes, özel kod veya proje e-"
-"posta adresi gibi ayarları değiştirmek ve hatta tüm projeyi silmek de dahil "
-"olmak üzere projenin tamamına erişebilir."
+"paylaşabilirsiniz.<br />Özel koda sahip olan herkes, özel kod veya proje "
+"e-posta adresi gibi ayarları değiştirmek ve hatta tüm projeyi silmek de "
+"dahil olmak üzere projenin tamamına erişebilir."
 
 msgid "Identifier:"
 msgstr "Tanımlayıcı:"
@@ -954,6 +995,15 @@ msgstr "Kim ödüyor?"
 msgid "To whom?"
 msgstr "Kime?"
 
+msgid "Settled?"
+msgstr "Hesap kapatıldı mı?"
+
+msgid "Click here to record that the money transfer has been done"
+msgstr "Para transferi yapıldı olarak işaretlemek için tıklayın"
+
+msgid "Register settlement"
+msgstr "Hesap kapatma işlemini kaydet"
+
 msgid "Who?"
 msgstr "Kim?"
 
@@ -969,10 +1019,16 @@ msgstr "yeniden etkinleştir"
 msgid "Paid"
 msgstr "Ödendi"
 
-msgid "Spent"
-msgstr "Harcandı"
+msgid "Expenses"
+msgstr "Giderler"
 
-msgid "Expenses by Month"
+msgid "Direct transfer"
+msgstr "Doğrudan para transferi"
+
+msgid "Received"
+msgstr "Alındı"
+
+msgid "Expenses by month"
 msgstr "Aya Göre Giderler"
 
 msgid "Period"
@@ -1167,3 +1223,73 @@ msgstr "Dönem"
 #~ msgstr ""
 #~ "Aşağıdaki bağlantıyı tercih ettiğiniz ortam"
 #~ " aracılığıyla doğrudan paylaşabilirsiniz"
+
+#~ msgid "Spent"
+#~ msgstr "Harcandı"
+
+#~ msgid "Use IP tracking for project history"
+#~ msgstr "Proje geçmişi için IP izlemeyi kullan"
+
+#~ msgid "Error deleting recorded IP addresses"
+#~ msgstr "Kaydedilen IP adresleri silinirken hata oluştu"
+
+#~ msgid "Deleted recorded IP addresses in project history."
+#~ msgstr "Proje geçmişinde kaydedilen IP adresleri silindi."
+
+#~ msgid "Disabled Project History & IP Address Recording"
+#~ msgstr "Proje Geçmişi ve IP Adresi Kaydetme Devre Dışı"
+
+#~ msgid "Disabled IP Address Recording"
+#~ msgstr "IP Adresi Kaydetme Devre Dışı"
+
+#~ msgid "Enabled Project History & IP Address Recording"
+#~ msgstr "Proje Geçmişi ve IP Adresi Kaydetme Etkin"
+
+#~ msgid "Enabled IP Address Recording"
+#~ msgstr "IP Adresi Kaydetme Etkin"
+
+#~ msgid "Confirm Remove IP Adresses"
+#~ msgstr "IP Adresini Kaldırmayı Onayla"
+
+#~ msgid ""
+#~ "Are you sure you want to delete"
+#~ " all recorded IP addresses from this"
+#~ " project?\n"
+#~ "                The rest of the project"
+#~ " history will be unaffected. This "
+#~ "action cannot be undone."
+#~ msgstr ""
+#~ "Kaydedilen tüm IP adreslerini bu "
+#~ "projeden silmek istediğinize emin misiniz?"
+#~ "\n"
+#~ "                Proje geçmişinin geri kalanı"
+#~ " bundan etkilenmeyecektir. Bu işlem geri"
+#~ " alınamaz."
+
+#~ msgid ""
+#~ "Some entries below contain IP addresses,"
+#~ " even though this project has IP "
+#~ "recording disabled. "
+#~ msgstr ""
+#~ "Bu projede IP kaydetme devre dışı "
+#~ "bırakılmış olsa da aşağıdaki bazı "
+#~ "girdiler IP adresleri içermektedir. "
+
+#~ msgid "Delete stored IP addresses"
+#~ msgstr "Kaydedilen IP adreslerini sil"
+
+#~ msgid "No IP Addresses to erase"
+#~ msgstr "Silinecek IP adresi yok"
+
+#~ msgid "Delete Stored IP Addresses"
+#~ msgstr "Kaydedilen IP Adreslerini Sil"
+
+#~ msgid "IP address recording can be enabled on the settings page"
+#~ msgstr "IP adresi kaydetme ayarlar sayfasında etkinleştirilebilir"
+
+#~ msgid "IP address recording can be disabled on the settings page"
+#~ msgstr "IP adresi kaydetme ayarlar sayfasında devre dışı bırakılabilir"
+
+#~ msgid "From IP"
+#~ msgstr "IP'den"
+

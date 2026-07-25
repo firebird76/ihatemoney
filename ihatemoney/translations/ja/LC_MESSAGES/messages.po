@@ -3,17 +3,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-29 14:24+0200\n"
-"PO-Revision-Date: 2020-11-11 16:28+0000\n"
-"Last-Translator: Jwen921 <yangjingwen0921@gmail.com>\n"
+"POT-Creation-Date: 2026-07-21 23:16+0200\n"
+"PO-Revision-Date: 2024-06-24 15:09+0000\n"
+"Last-Translator: Khang Tran <tranchikhang@outlook.com>\n"
 "Language: ja\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/i-hate-"
 "money/i-hate-money/ja/>\n"
-"Plural-Forms: nplurals=1; plural=0\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.9.0\n"
+"Generated-By: Babel 2.16.0\n"
 
 #, python-format
 msgid "You have just created '%(project)s' to share your expenses"
@@ -27,19 +27,17 @@ msgstr "無効な入力です。数字と「+ - * / 」の演算子しか入力�
 msgid "Project name"
 msgstr "プロジェクトの名前"
 
-#, fuzzy
 msgid "Current private code"
-msgstr "暗証コード"
+msgstr "現在の暗証コード"
 
 msgid "Enter existing private code to edit project"
-msgstr ""
+msgstr "プロジェクトを編集するために、暗証コードを入力してください"
 
-#, fuzzy
 msgid "New private code"
-msgstr "暗証コード"
+msgstr "新暗証コード"
 
 msgid "Enter a new code if you want to change it"
-msgstr ""
+msgstr "変更するために、新しい暗証コードを入力してください"
 
 msgid "Email"
 msgstr "メールアドレス"
@@ -47,27 +45,26 @@ msgstr "メールアドレス"
 msgid "Enable project history"
 msgstr "プロジェクトの歴史を有効にする"
 
-msgid "Use IP tracking for project history"
-msgstr "IPでプロジェクトの歴史を追跡する"
-
 msgid "Default Currency"
 msgstr "初期設定にする通貨"
 
 msgid "Setting a default currency enables currency conversion between bills"
-msgstr ""
+msgstr "明細通貨変換のため、デフォルトの通貨を設定してください"
 
-#, fuzzy
 msgid "Unknown error"
-msgstr "未知のプロジェクト"
+msgstr "不明エラー"
 
-#, fuzzy
 msgid "Invalid private code."
-msgstr "暗証コード"
+msgstr "無効な暗証コード。"
 
 msgid ""
 "This project cannot be set to 'no currency' because it contains bills in "
 "multiple currencies."
 msgstr ""
+
+#, fuzzy
+msgid "Cannot change project currency because currency conversion is broken"
+msgstr "明細通貨変換のため、デフォルトの通貨を設定してください"
 
 msgid "Compatible with Cospend"
 msgstr ""
@@ -148,6 +145,10 @@ msgstr "この明細に関する外部ファイルのリンク"
 msgid "For whom?"
 msgstr "誰のためですか？"
 
+#, fuzzy
+msgid "Bill Type"
+msgstr "明細項目"
+
 msgid "Submit"
 msgstr "確認"
 
@@ -157,6 +158,10 @@ msgstr "確認して、新しいのを作成します"
 #, python-format
 msgid "Project default: %(currency)s"
 msgstr "初期プロジェクト: %(currency)s"
+
+#, python-format
+msgid "Failed to convert from %(bill_currency)s currency to %(project_currency)s"
+msgstr ""
 
 msgid "Name"
 msgstr "名前"
@@ -179,7 +184,7 @@ msgid "This project already have this participant"
 msgstr "プロジェクトはすでにこのメンバーを含めています"
 
 msgid "People to notify"
-msgstr ""
+msgstr "通知したい人"
 
 msgid "Send the invitations"
 msgstr "招待状を送る"
@@ -194,11 +199,11 @@ msgstr "ログアウト"
 msgid "Please check the email configuration of the server."
 msgstr ""
 
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "Please check the email configuration of the server or contact the "
 "administrator: %(admin_email)s"
-msgstr "申し訳ございませんが、招待メールを送ったとき、エラーが発生しました。メールアドレスを再度チェックするかまたは管理者に連絡ください。"
+msgstr "申し訳ございませんが、エラーが発生しました。メールアドレスを再度チェックするか、または管理者（ %(admin_email)s）に連絡ください"
 
 #. List with two items only
 msgid "{dual_object_0} and {dual_object_1}"
@@ -238,6 +243,10 @@ msgstr "この管理者パスワードは正しくないでウ。%(num)d試行�
 msgid "Provided token is invalid"
 msgstr ""
 
+#, fuzzy, python-format
+msgid "This private code is not the right one. Only %(num)d attempts left."
+msgstr "この管理者パスワードは正しくないでウ。%(num)d試行しか残っていません。"
+
 msgid "This private code is not the right one"
 msgstr "私用コードは正しくない"
 
@@ -271,7 +280,7 @@ msgid "Project settings have been changed successfully."
 msgstr ""
 
 msgid "Unable to parse CSV"
-msgstr ""
+msgstr "CSVを読み込むことができません"
 
 #, python-format
 msgid "Missing attribute: %(attribute)s"
@@ -292,7 +301,7 @@ msgid "Error deleting project"
 msgstr ""
 
 msgid "Unable to logout"
-msgstr ""
+msgstr "ログアウトできません"
 
 #, python-format
 msgid "You have been invited to share your expenses for %(project)s"
@@ -349,20 +358,23 @@ msgstr "明細が変更されました"
 msgid "%(lang)s is not a supported language"
 msgstr ""
 
+msgid "Error creating settlement bill"
+msgstr ""
+
+#, fuzzy
+msgid "Settlement"
+msgstr "解決"
+
+#, fuzzy
+msgid "Settlement bill has been successfully added"
+msgstr "明細が追加されました"
+
 #, fuzzy
 msgid "Error deleting project history"
 msgstr "プロジェクトの歴史を有効にする"
 
-#, fuzzy
 msgid "Deleted project history."
-msgstr "プロジェクトの歴史を有効にする"
-
-#, fuzzy
-msgid "Error deleting recorded IP addresses"
-msgstr "保存されたIPアドレスを削除する"
-
-msgid "Deleted recorded IP addresses in project history."
-msgstr ""
+msgstr "プロジェクトの歴史を削除しました。"
 
 msgid "Sorry, we were unable to find the page you've asked for."
 msgstr "申し訳ございませんが、求められるページが見つかりませんでした。"
@@ -501,6 +513,9 @@ msgstr "参加者を追加する"
 msgid "Edit this participant"
 msgstr "参加者を追加する"
 
+msgid "Save"
+msgstr ""
+
 msgid "john.doe@example.com, mary.moe@site.com"
 msgstr "john.doe@example.com, mary.moe@site.com"
 
@@ -510,22 +525,11 @@ msgstr "ダウンロードする"
 msgid "Disabled Project History"
 msgstr "操作できないプロジェクト歴史"
 
-msgid "Disabled Project History & IP Address Recording"
-msgstr "操作できないプロジェクトの歴史＆IPアドレス記録"
-
 msgid "Enabled Project History"
 msgstr "操作可能なプロジェクト歴史"
 
-msgid "Disabled IP Address Recording"
-msgstr "操作できないIPアドレス記録"
-
-msgid "Enabled Project History & IP Address Recording"
-msgstr "操作可能なプロジェクト歴史＆IPアドレス記録"
-
-msgid "Enabled IP Address Recording"
-msgstr "操作可能なIPアドレス記録"
-
-msgid "History Settings Changed"
+#, fuzzy
+msgid "History Settings Changed (legacy settings)"
 msgstr "歴史設定が変更された"
 
 #, python-format
@@ -536,25 +540,6 @@ msgstr ""
 msgid "Bill %(name)s: %(property_name)s changed to %(after)s"
 msgstr ""
 
-msgid "Confirm Remove IP Adresses"
-msgstr "IPアドレスの取り除きを確認する"
-
-msgid ""
-"Are you sure you want to delete all recorded IP addresses from this "
-"project?\n"
-"                The rest of the project history will be unaffected. This "
-"action cannot be undone."
-msgstr ""
-"本当にこのプロジェクトから記録されたIPアドレスを全部削除したいですか。\n"
-"残りのプロジェクト歴史が影響されていません。この操作は元に戻せません。"
-
-#, fuzzy
-msgid "Confirm deletion"
-msgstr "削除を確認する"
-
-msgid "Close"
-msgstr "閉じる"
-
 msgid "Delete Confirmation"
 msgstr "確認を削除する"
 
@@ -562,6 +547,13 @@ msgid ""
 "Are you sure you want to erase all history for this project? This action "
 "cannot be undone."
 msgstr "本当にこのプロジェクトの歴史をすべて消しますか。この操作は元に戻せません。"
+
+#, fuzzy
+msgid "Confirm deletion"
+msgstr "削除を確認する"
+
+msgid "Close"
+msgstr "閉じる"
 
 #, python-format
 msgid "Bill %(name)s: added %(owers_list_str)s to owers list"
@@ -571,12 +563,37 @@ msgstr ""
 msgid "Bill %(name)s: removed %(owers_list_str)s from owers list"
 msgstr ""
 
-msgid "This project has history disabled. New actions won't appear below."
+msgid "Details of the bill (before the change)"
 msgstr ""
 
 #, fuzzy
+msgid "Details of the bill"
+msgstr "明細を編集する"
+
+#, fuzzy
+msgid "Date:"
+msgstr "日付"
+
+#, fuzzy
+msgid "Payer:"
+msgstr "支払人"
+
+#, fuzzy
+msgid "Amount:"
+msgstr "金額"
+
+msgid "Owers:"
+msgstr ""
+
+#, fuzzy
+msgid "External link:"
+msgstr "外部リンク"
+
+msgid "This project has history disabled. New actions won't appear below."
+msgstr ""
+
 msgid "You can enable history on the settings page."
-msgstr "設定ページでIPアドレス記録を編集可能にすることができる"
+msgstr "設定ページでIPアドレス記録を編集可能にすることができる。"
 
 msgid ""
 "The table below reflects actions recorded prior to disabling project "
@@ -586,20 +603,6 @@ msgstr ""
 #, fuzzy
 msgid "You can clear the project history to remove them."
 msgstr "プロジェクトの歴史が誰かに取り除かれたかもしれません。"
-
-msgid ""
-"Some entries below contain IP addresses, even though this project has IP "
-"recording disabled. "
-msgstr "このプロジェクトのIP記録が操作できない一方、下の入り口の一部がIPアドレスを含めています。 "
-
-msgid "Delete stored IP addresses"
-msgstr "保存されたIPアドレスを削除する"
-
-msgid "No IP Addresses to erase"
-msgstr "削除できるIPアドレスはない"
-
-msgid "Delete Stored IP Addresses"
-msgstr "保存されたIPアドレスを削除する"
 
 msgid "No history to erase"
 msgstr "削除できる歴史はない"
@@ -613,22 +616,13 @@ msgstr "時間"
 msgid "Event"
 msgstr "イベント"
 
-msgid "IP address recording can be enabled on the settings page"
-msgstr "設定ページでIPアドレス記録を編集可能にすることができる"
-
-msgid "IP address recording can be disabled on the settings page"
-msgstr "設定ページでIPアドレス記録を編集不可にすることができる"
-
-msgid "From IP"
-msgstr "IPから"
-
-#, fuzzy, python-format
+#, python-format
 msgid "Project %(name)s added"
-msgstr "プロジェクトの名前"
+msgstr "プロジェクト%(name)sが作成されました"
 
-#, fuzzy, python-format
+#, python-format
 msgid "Bill %(name)s added"
-msgstr "明細が追加されました"
+msgstr "%(name)s明細が追加されました"
 
 #, python-format
 msgid "Participant %(name)s added"
@@ -641,31 +635,15 @@ msgstr "プロジェクトの私用コードが変更された"
 msgid "Project renamed to %(new_project_name)s"
 msgstr "プロジェクト名は%(new_project_name)s"
 
-#, fuzzy, python-format
+#, python-format
 msgid "Project contact email changed to %(new_email)s"
-msgstr "プロジェクトの連絡メールが…に変更された"
+msgstr "プロジェクトの連絡メールが%(new_email)sに変更されました"
 
 msgid "Project settings modified"
 msgstr "プロジェクトの設定が修正された"
 
 #, python-format
-msgid "Participant %(name)s deactivated"
-msgstr ""
-
-#, python-format
-msgid "Participant %(name)s reactivated"
-msgstr ""
-
-#, python-format
-msgid "Participant %(name)s renamed to %(new_name)s"
-msgstr ""
-
-#, python-format
 msgid "Bill %(name)s renamed to %(new_description)s"
-msgstr ""
-
-#, python-format
-msgid "Participant %(name)s: weight changed from %(old_weight)s to %(new_weight)s"
 msgstr ""
 
 msgid "Payer"
@@ -681,9 +659,25 @@ msgstr "日付"
 msgid "Amount in %(currency)s"
 msgstr "%(currency)sでの金額"
 
-#, fuzzy, python-format
+#, python-format
 msgid "Bill %(name)s modified"
-msgstr "明細が変更されました"
+msgstr "%(name)s明細が変更されました"
+
+#, python-format
+msgid "Participant %(name)s deactivated"
+msgstr ""
+
+#, python-format
+msgid "Participant %(name)s reactivated"
+msgstr ""
+
+#, python-format
+msgid "Participant %(name)s renamed to %(new_name)s"
+msgstr ""
+
+#, python-format
+msgid "Participant %(name)s: weight changed from %(old_weight)s to %(new_weight)s"
+msgstr ""
 
 #, python-format
 msgid "Participant %(name)s modified"
@@ -697,17 +691,17 @@ msgstr "ユーザー%(name)sが既に取り除かれました"
 msgid "Participant %(name)s removed"
 msgstr "ユーザー%(name)sが既に取り除かれました"
 
-#, fuzzy, python-format
+#, python-format
 msgid "Project %(name)s changed in an unknown way"
-msgstr "未知の方法で変更された"
+msgstr "プロジェクト%(name)sが不明な方法で変更されました"
 
-#, fuzzy, python-format
+#, python-format
 msgid "Bill %(name)s changed in an unknown way"
-msgstr "未知の方法で変更された"
+msgstr "明細%(name)sが不明な方法で変更されました"
 
-#, fuzzy, python-format
+#, python-format
 msgid "Participant %(name)s changed in an unknown way"
-msgstr "未知の方法で変更された"
+msgstr "参加者%(name)sが不明な方法で変更されました"
 
 msgid "Nothing to list"
 msgstr "表示できるものがない"
@@ -802,7 +796,7 @@ msgstr "携帯アプリ"
 msgid "Documentation"
 msgstr "書類"
 
-msgid "Administation Dashboard"
+msgid "Administration Dashboard"
 msgstr "管理ダッシュボード"
 
 #, fuzzy
@@ -822,6 +816,14 @@ msgstr "各自に%(amount)s"
 msgid "you sure?"
 msgstr "確認？"
 
+#, fuzzy
+msgid "Hide filters"
+msgstr "名前："
+
+#, fuzzy
+msgid "Show filters"
+msgstr "ファイルを選択する"
+
 msgid "Invite people"
 msgstr "人を誘う"
 
@@ -831,11 +833,52 @@ msgstr "もっと新しい明細"
 msgid "Older bills"
 msgstr "もっと古い明細"
 
+msgid "Toggle filters"
+msgstr ""
+
 msgid "You should start by adding participants"
 msgstr "参加者を追加して始めましょう"
 
 msgid "Add a new bill"
 msgstr "新しい明細を追加する"
+
+msgid "Search"
+msgstr ""
+
+#, fuzzy
+msgid "Search in For what?"
+msgstr "何のため？"
+
+#, fuzzy
+msgid "Any payer"
+msgstr "支払人"
+
+msgid "Start date"
+msgstr ""
+
+#, fuzzy
+msgid "End date"
+msgstr "日付"
+
+#, fuzzy
+msgid "Amount min"
+msgstr "金額"
+
+msgid "Min cost"
+msgstr ""
+
+#, fuzzy
+msgid "Amount max"
+msgstr "金額"
+
+msgid "Max cost"
+msgstr ""
+
+msgid "Filter"
+msgstr ""
+
+msgid "Clear filters"
+msgstr ""
 
 msgid "For what?"
 msgstr "何のため？"
@@ -904,14 +947,11 @@ msgstr ""
 msgid "Send via Emails"
 msgstr "メールで送る"
 
-#, fuzzy
 msgid ""
 "Specify a list of email adresses (separated by comma) of people you want "
 "to notify about the creation of this project. We will send them an email "
 "with the invitation link."
-msgstr ""
-"…を知らせたいメールアドレスのリストを特定する（カンマ区切り）\n"
-"彼らにこの予算管理プロジェクトの作成をメールでお知らせします。"
+msgstr "知らせたいメールアドレスのリスト（カンマ区切り）を指定してください。メールで招待リンクを送信します。"
 
 msgid "Share Identifier & code"
 msgstr "名前とコードを共有する"
@@ -926,9 +966,8 @@ msgstr ""
 msgid "Identifier:"
 msgstr "名前："
 
-#, fuzzy
 msgid "Private code:"
-msgstr "暗証コード"
+msgstr "暗証コード："
 
 msgid "the private code was defined when you created the project"
 msgstr ""
@@ -938,6 +977,17 @@ msgstr "誰が支払った？"
 
 msgid "To whom?"
 msgstr "誰まで？"
+
+#, fuzzy
+msgid "Settled?"
+msgstr "解決"
+
+msgid "Click here to record that the money transfer has been done"
+msgstr ""
+
+#, fuzzy
+msgid "Register settlement"
+msgstr "解決"
 
 msgid "Who?"
 msgstr "誰？"
@@ -954,10 +1004,19 @@ msgstr "再び調査可能にする"
 msgid "Paid"
 msgstr "支払われた"
 
-msgid "Spent"
-msgstr "使われた"
+#, fuzzy
+msgid "Expenses"
+msgstr "月別の費用"
 
-msgid "Expenses by Month"
+msgid "Direct transfer"
+msgstr ""
+
+#, fuzzy
+msgid "Received"
+msgstr "再び調査可能にする"
+
+#, fuzzy
+msgid "Expenses by month"
 msgstr "月別の費用"
 
 msgid "Period"
@@ -1109,4 +1168,66 @@ msgstr "期間"
 
 #~ msgid "You can directly share the following link via your prefered medium"
 #~ msgstr "好きの手段で以下のリンクを直接に共有できる"
+
+#~ msgid "Spent"
+#~ msgstr "使われた"
+
+#~ msgid "Use IP tracking for project history"
+#~ msgstr "IPでプロジェクトの歴史を追跡する"
+
+#~ msgid "Error deleting recorded IP addresses"
+#~ msgstr "保存されたIPアドレスを削除する"
+
+#~ msgid "Deleted recorded IP addresses in project history."
+#~ msgstr ""
+
+#~ msgid "Disabled Project History & IP Address Recording"
+#~ msgstr "操作できないプロジェクトの歴史＆IPアドレス記録"
+
+#~ msgid "Disabled IP Address Recording"
+#~ msgstr "操作できないIPアドレス記録"
+
+#~ msgid "Enabled Project History & IP Address Recording"
+#~ msgstr "操作可能なプロジェクト歴史＆IPアドレス記録"
+
+#~ msgid "Enabled IP Address Recording"
+#~ msgstr "操作可能なIPアドレス記録"
+
+#~ msgid "Confirm Remove IP Adresses"
+#~ msgstr "IPアドレスの取り除きを確認する"
+
+#~ msgid ""
+#~ "Are you sure you want to delete"
+#~ " all recorded IP addresses from this"
+#~ " project?\n"
+#~ "                The rest of the project"
+#~ " history will be unaffected. This "
+#~ "action cannot be undone."
+#~ msgstr ""
+#~ "本当にこのプロジェクトから記録されたIPアドレスを全部削除したいですか。\n"
+#~ "残りのプロジェクト歴史が影響されていません。この操作は元に戻せません。"
+
+#~ msgid ""
+#~ "Some entries below contain IP addresses,"
+#~ " even though this project has IP "
+#~ "recording disabled. "
+#~ msgstr "このプロジェクトのIP記録が操作できない一方、下の入り口の一部がIPアドレスを含めています。 "
+
+#~ msgid "Delete stored IP addresses"
+#~ msgstr "保存されたIPアドレスを削除する"
+
+#~ msgid "No IP Addresses to erase"
+#~ msgstr "削除できるIPアドレスはない"
+
+#~ msgid "Delete Stored IP Addresses"
+#~ msgstr "保存されたIPアドレスを削除する"
+
+#~ msgid "IP address recording can be enabled on the settings page"
+#~ msgstr "設定ページでIPアドレス記録を編集可能にすることができる"
+
+#~ msgid "IP address recording can be disabled on the settings page"
+#~ msgstr "設定ページでIPアドレス記録を編集不可にすることができる"
+
+#~ msgid "From IP"
+#~ msgstr "IPから"
 

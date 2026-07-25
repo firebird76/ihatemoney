@@ -3,17 +3,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-29 14:24+0200\n"
+"POT-Creation-Date: 2026-07-21 23:16+0200\n"
 "PO-Revision-Date: 2021-08-01 08:34+0000\n"
 "Last-Translator: Eugenia Russell <eugenia.russell2019@gmail.com>\n"
 "Language: el\n"
 "Language-Team: Greek <https://hosted.weblate.org/projects/i-hate-money/i"
 "-hate-money/el/>\n"
-"Plural-Forms: nplurals=2; plural=n != 1\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.9.0\n"
+"Generated-By: Babel 2.16.0\n"
 
 #, python-format
 msgid "You have just created '%(project)s' to share your expenses"
@@ -47,9 +47,6 @@ msgstr "Ηλεκτρονικό ταχυδρομείο"
 msgid "Enable project history"
 msgstr "Ενεργοποίηση ιστορικού έργων"
 
-msgid "Use IP tracking for project history"
-msgstr "Χρήση παρακολούθησης IP για ιστορικό έργων"
-
 msgid "Default Currency"
 msgstr "Προεπιλεγμένο Νόμισμα"
 
@@ -70,6 +67,9 @@ msgid ""
 msgstr ""
 "Αυτό το έργο δεν μπορεί να οριστεί σε \"χωρίς νόμισμα\" επειδή περιέχει "
 "λογαριασμούς σε πολλαπλά νομίσματα."
+
+msgid "Cannot change project currency because currency conversion is broken"
+msgstr ""
 
 msgid "Compatible with Cospend"
 msgstr ""
@@ -154,6 +154,10 @@ msgstr ""
 msgid "For whom?"
 msgstr "Για ποιον;"
 
+#, fuzzy
+msgid "Bill Type"
+msgstr "Στοιχεία λογαριασμού"
+
 msgid "Submit"
 msgstr "Yποβολή"
 
@@ -163,6 +167,10 @@ msgstr "Υποβολή και προσθήκη νέου"
 #, python-format
 msgid "Project default: %(currency)s"
 msgstr "Προεπιλογή έργου: %(currency)s"
+
+#, python-format
+msgid "Failed to convert from %(bill_currency)s currency to %(project_currency)s"
+msgstr ""
 
 msgid "Name"
 msgstr "Όνομα"
@@ -245,6 +253,12 @@ msgstr ""
 
 msgid "Provided token is invalid"
 msgstr ""
+
+#, fuzzy, python-format
+msgid "This private code is not the right one. Only %(num)d attempts left."
+msgstr ""
+"Αυτός ο κωδικός διαχειριστή δεν είναι σωστός. Μένουν μόνο %(num)d "
+"προσπάθειες."
 
 msgid "This private code is not the right one"
 msgstr "Αυτός ο ιδιωτικός κωδικός δεν είναι ο σωστός"
@@ -357,6 +371,17 @@ msgstr "Ο λογαριασμός έχει τροποποιηθεί"
 msgid "%(lang)s is not a supported language"
 msgstr ""
 
+msgid "Error creating settlement bill"
+msgstr ""
+
+#, fuzzy
+msgid "Settlement"
+msgstr "Διευθέτηση σχεδίων"
+
+#, fuzzy
+msgid "Settlement bill has been successfully added"
+msgstr "Ο λογαριασμός προστέθηκε"
+
 #, fuzzy
 msgid "Error deleting project history"
 msgstr "Ενεργοποίηση ιστορικού έργων"
@@ -364,13 +389,6 @@ msgstr "Ενεργοποίηση ιστορικού έργων"
 #, fuzzy
 msgid "Deleted project history."
 msgstr "Ενεργοποίηση ιστορικού έργων"
-
-#, fuzzy
-msgid "Error deleting recorded IP addresses"
-msgstr "Διαγραφή αποθηκευμένων διευθύνσεων IP"
-
-msgid "Deleted recorded IP addresses in project history."
-msgstr ""
 
 msgid "Sorry, we were unable to find the page you've asked for."
 msgstr "Λυπούμαστε, δεν ήταν δυνατή η εύρεση της σελίδας που ζητήσατε."
@@ -513,6 +531,9 @@ msgstr "Προσθήκη συμμετέχοντος"
 msgid "Edit this participant"
 msgstr "Προσθήκη συμμετέχοντος"
 
+msgid "Save"
+msgstr ""
+
 msgid "john.doe@example.com, mary.moe@site.com"
 msgstr ""
 
@@ -522,22 +543,11 @@ msgstr "Κατεβάστε"
 msgid "Disabled Project History"
 msgstr "Απενεργοποιημένο ιστορικό έργου"
 
-msgid "Disabled Project History & IP Address Recording"
-msgstr ""
-
 msgid "Enabled Project History"
 msgstr "Ενεργοποιημένο ιστορικό έργου"
 
-msgid "Disabled IP Address Recording"
-msgstr ""
-
-msgid "Enabled Project History & IP Address Recording"
-msgstr ""
-
-msgid "Enabled IP Address Recording"
-msgstr ""
-
-msgid "History Settings Changed"
+#, fuzzy
+msgid "History Settings Changed (legacy settings)"
 msgstr "Αλλαγή ρυθμίσεων ιστορικού"
 
 #, python-format
@@ -548,14 +558,12 @@ msgstr ""
 msgid "Bill %(name)s: %(property_name)s changed to %(after)s"
 msgstr ""
 
-msgid "Confirm Remove IP Adresses"
-msgstr ""
+msgid "Delete Confirmation"
+msgstr "Επιβεβαίωση Διαγραφής"
 
 msgid ""
-"Are you sure you want to delete all recorded IP addresses from this "
-"project?\n"
-"                The rest of the project history will be unaffected. This "
-"action cannot be undone."
+"Are you sure you want to erase all history for this project? This action "
+"cannot be undone."
 msgstr ""
 
 #, fuzzy
@@ -565,14 +573,6 @@ msgstr "Επιβεβαίωση Διαγραφής;"
 msgid "Close"
 msgstr "Κλείστε"
 
-msgid "Delete Confirmation"
-msgstr "Επιβεβαίωση Διαγραφής"
-
-msgid ""
-"Are you sure you want to erase all history for this project? This action "
-"cannot be undone."
-msgstr ""
-
 #, python-format
 msgid "Bill %(name)s: added %(owers_list_str)s to owers list"
 msgstr ""
@@ -580,6 +580,32 @@ msgstr ""
 #, python-format
 msgid "Bill %(name)s: removed %(owers_list_str)s from owers list"
 msgstr ""
+
+msgid "Details of the bill (before the change)"
+msgstr ""
+
+#, fuzzy
+msgid "Details of the bill"
+msgstr "Επεξεργαστείτε αυτόν τον λογαριασμό"
+
+#, fuzzy
+msgid "Date:"
+msgstr "Ημερομηνία"
+
+#, fuzzy
+msgid "Payer:"
+msgstr "Φορέας πληρωμής"
+
+#, fuzzy
+msgid "Amount:"
+msgstr "Ποσό"
+
+msgid "Owers:"
+msgstr ""
+
+#, fuzzy
+msgid "External link:"
+msgstr "Εξωτερική σύνδεση"
 
 msgid "This project has history disabled. New actions won't appear below."
 msgstr ""
@@ -596,20 +622,6 @@ msgstr ""
 msgid "You can clear the project history to remove them."
 msgstr "Κάποιος πιθανώς διέγραψε το ιστορικό του έργου."
 
-msgid ""
-"Some entries below contain IP addresses, even though this project has IP "
-"recording disabled. "
-msgstr ""
-
-msgid "Delete stored IP addresses"
-msgstr "Διαγραφή αποθηκευμένων διευθύνσεων IP"
-
-msgid "No IP Addresses to erase"
-msgstr "Δεν υπάρχουν διευθύνσεις IP προς διαγραφή"
-
-msgid "Delete Stored IP Addresses"
-msgstr "Διαγραφή αποθηκευμένων διευθύνσεων IP"
-
 msgid "No history to erase"
 msgstr "Δεν υπάρχει ιστορία για διαγραφή"
 
@@ -621,15 +633,6 @@ msgstr "Ώρα"
 
 msgid "Event"
 msgstr "Εκδήλωση"
-
-msgid "IP address recording can be enabled on the settings page"
-msgstr ""
-
-msgid "IP address recording can be disabled on the settings page"
-msgstr ""
-
-msgid "From IP"
-msgstr "Από IP"
 
 #, fuzzy, python-format
 msgid "Project %(name)s added"
@@ -658,23 +661,7 @@ msgid "Project settings modified"
 msgstr "Τροποποιημένες ρυθμίσεις έργου"
 
 #, python-format
-msgid "Participant %(name)s deactivated"
-msgstr ""
-
-#, python-format
-msgid "Participant %(name)s reactivated"
-msgstr ""
-
-#, python-format
-msgid "Participant %(name)s renamed to %(new_name)s"
-msgstr ""
-
-#, python-format
 msgid "Bill %(name)s renamed to %(new_description)s"
-msgstr ""
-
-#, python-format
-msgid "Participant %(name)s: weight changed from %(old_weight)s to %(new_weight)s"
 msgstr ""
 
 msgid "Payer"
@@ -693,6 +680,22 @@ msgstr "Ποσό σε %(currency)s"
 #, fuzzy, python-format
 msgid "Bill %(name)s modified"
 msgstr "Ο λογαριασμός έχει τροποποιηθεί"
+
+#, python-format
+msgid "Participant %(name)s deactivated"
+msgstr ""
+
+#, python-format
+msgid "Participant %(name)s reactivated"
+msgstr ""
+
+#, python-format
+msgid "Participant %(name)s renamed to %(new_name)s"
+msgstr ""
+
+#, python-format
+msgid "Participant %(name)s: weight changed from %(old_weight)s to %(new_weight)s"
+msgstr ""
 
 #, python-format
 msgid "Participant %(name)s modified"
@@ -811,7 +814,7 @@ msgstr ""
 msgid "Documentation"
 msgstr ""
 
-msgid "Administation Dashboard"
+msgid "Administration Dashboard"
 msgstr ""
 
 #, fuzzy
@@ -831,6 +834,14 @@ msgstr ""
 msgid "you sure?"
 msgstr "Είστε σίγουρος;"
 
+#, fuzzy
+msgid "Hide filters"
+msgstr "Επιλογή αρχείου"
+
+#, fuzzy
+msgid "Show filters"
+msgstr "Επιλογή αρχείου"
+
 msgid "Invite people"
 msgstr ""
 
@@ -840,10 +851,50 @@ msgstr ""
 msgid "Older bills"
 msgstr ""
 
+msgid "Toggle filters"
+msgstr ""
+
 msgid "You should start by adding participants"
 msgstr ""
 
 msgid "Add a new bill"
+msgstr ""
+
+msgid "Search"
+msgstr ""
+
+msgid "Search in For what?"
+msgstr ""
+
+#, fuzzy
+msgid "Any payer"
+msgstr "Φορέας πληρωμής"
+
+msgid "Start date"
+msgstr ""
+
+#, fuzzy
+msgid "End date"
+msgstr "Ημερομηνία"
+
+#, fuzzy
+msgid "Amount min"
+msgstr "Ποσό"
+
+msgid "Min cost"
+msgstr ""
+
+#, fuzzy
+msgid "Amount max"
+msgstr "Ποσό"
+
+msgid "Max cost"
+msgstr ""
+
+msgid "Filter"
+msgstr ""
+
+msgid "Clear filters"
 msgstr ""
 
 msgid "For what?"
@@ -944,6 +995,17 @@ msgstr ""
 msgid "To whom?"
 msgstr ""
 
+#, fuzzy
+msgid "Settled?"
+msgstr "Διευθέτηση σχεδίων"
+
+msgid "Click here to record that the money transfer has been done"
+msgstr ""
+
+#, fuzzy
+msgid "Register settlement"
+msgstr "Διευθέτηση σχεδίων"
+
 msgid "Who?"
 msgstr ""
 
@@ -959,10 +1021,19 @@ msgstr "επανενεργοποιήστε το"
 msgid "Paid"
 msgstr "Εξοφλήθη"
 
-msgid "Spent"
-msgstr "Ξοδεύτηκε"
+#, fuzzy
+msgid "Expenses"
+msgstr "Δαπάνες ανά μήνα"
 
-msgid "Expenses by Month"
+msgid "Direct transfer"
+msgstr ""
+
+#, fuzzy
+msgid "Received"
+msgstr "επανενεργοποιήστε το"
+
+#, fuzzy
+msgid "Expenses by month"
 msgstr "Δαπάνες ανά μήνα"
 
 msgid "Period"
@@ -1159,4 +1230,64 @@ msgstr "Περίοδος"
 #~ "them an email with the invitation "
 #~ "link."
 #~ msgstr ""
+
+#~ msgid "Spent"
+#~ msgstr "Ξοδεύτηκε"
+
+#~ msgid "Use IP tracking for project history"
+#~ msgstr "Χρήση παρακολούθησης IP για ιστορικό έργων"
+
+#~ msgid "Error deleting recorded IP addresses"
+#~ msgstr "Διαγραφή αποθηκευμένων διευθύνσεων IP"
+
+#~ msgid "Deleted recorded IP addresses in project history."
+#~ msgstr ""
+
+#~ msgid "Disabled Project History & IP Address Recording"
+#~ msgstr ""
+
+#~ msgid "Disabled IP Address Recording"
+#~ msgstr ""
+
+#~ msgid "Enabled Project History & IP Address Recording"
+#~ msgstr ""
+
+#~ msgid "Enabled IP Address Recording"
+#~ msgstr ""
+
+#~ msgid "Confirm Remove IP Adresses"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Are you sure you want to delete"
+#~ " all recorded IP addresses from this"
+#~ " project?\n"
+#~ "                The rest of the project"
+#~ " history will be unaffected. This "
+#~ "action cannot be undone."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Some entries below contain IP addresses,"
+#~ " even though this project has IP "
+#~ "recording disabled. "
+#~ msgstr ""
+
+#~ msgid "Delete stored IP addresses"
+#~ msgstr "Διαγραφή αποθηκευμένων διευθύνσεων IP"
+
+#~ msgid "No IP Addresses to erase"
+#~ msgstr "Δεν υπάρχουν διευθύνσεις IP προς διαγραφή"
+
+#~ msgid "Delete Stored IP Addresses"
+#~ msgstr "Διαγραφή αποθηκευμένων διευθύνσεων IP"
+
+#~ msgid "IP address recording can be enabled on the settings page"
+#~ msgstr ""
+
+#~ msgid "IP address recording can be disabled on the settings page"
+#~ msgstr ""
+
+#~ msgid "From IP"
+#~ msgstr "Από IP"
 

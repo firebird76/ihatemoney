@@ -2,10 +2,84 @@
 
 This document describes changes between each past release.
 
-## 6.2.0 (unreleased)
+## 7.1.2 (unreleased)
+---------------------
+
+### Fixed
+- Fix first-database migration deadlock on MySQL 8 by closing the connection opened in `_pre_alembic_db` (#1457)
 
 
+## 7.1.1 (2026-05-09)
+- Fix Pypi package (commits missing in 7.1.0)
+
+
+## 7.1.0 (2026-05-09)
+Non functional version, use 7.1.1
+
+### Fixed
+- Avoid listing deactivated members in the bill list (#1411)
+- Don't blindly default to the first participant as payer (#1432)
+- Fix import of pre-7.0 files with no bill_type (#1436)
+
+### Changed
+- Update translations for Basque, Spanish (Latin America) and Khmer
+- Remove participant highlighting (#1437)
+- Rate-limit project authentication endpoint (#1447)
+
+### Development stuff
+- Improve Makefile
+- Refactor code for remembering last payer/ower
+
+## 7.0.1 (2026-03-04)
+
+### Fixed
+- Fix broken project creation when using PostgreSQL or MariaDB (#1406)
+- Fix broken API (#1272)
+- Distinguish translation strings for "Settle" button and "Settle",  
+  which have to be worded differently in some languages (#1417)  
+
+### Changed
+- Update translations for French
+
+## 7.0.0 (2026-01-30)
+
+### Breaking changes
+
+- Remove support for python 3.7, 3.9 and 3.10
+
+### Added
+
+- Add "reimbursement" bills and allow to create them directly from the "Settle" page (#1290)
+- Add support for python 3.13 (#1392)
 - Add support for python 3.12 (#757)
+- Add translations for Azerbaijani, Breton, Danish, Basque, and Occitan
+
+## Changed
+
+- Update translations for Catalan, Persian, Hungarian, Japanese,
+  Portuguese, Brazilian Portuguese, and Telugu
+- Update all Python dependencies (#1392 #1248)
+
+### Development stuff
+
+- Update db versions used in CI to match Debian Trixie (#1392)
+- Migrate from setup.cfg to pyproject.toml (#1243)
+- Document [repository rules](https://ihatemoney.readthedocs.io/en/latest/contributing.html#repository-rules) (#1253)
+- Replace the black linter by ruff
+- Replace virtualenv and pip by uv
+- Remove tox
+
+## 6.1.5 (2024-03-19)
+
+- Fix README and changelog not being displayed on PyPI
+- Fix ability to change project settings when project has existing currency (#1292)
+- Update translations for Dutch and German
+
+
+## 6.1.4 (2023-12-14)
+
+- Fix missing markdown include in manifest (#1274)
+- Update translations for Chinese, Turkish, Czech, Spanish (Latin America), Swedish
 
 
 ## 6.1.3 (2023-11-23)

@@ -22,8 +22,8 @@ from werkzeug.exceptions import HTTPException
 from werkzeug.routing import RoutingException
 from werkzeug.security import generate_password_hash as werkzeug_generate_password_hash
 
-limiter = limiter = Limiter(
-    current_app,
+limiter = Limiter(
+    app=current_app,
     key_func=get_remote_address,
     storage_uri="memory://",
 )
@@ -84,7 +84,6 @@ def flash_email_error(error_message, category="danger"):
 
 
 class Redirect303(HTTPException, RoutingException):
-
     """Raise if the map requests a redirect. This is for example the case if
     `strict_slashes` are activated and an url that requires a trailing slash.
 
@@ -102,7 +101,6 @@ class Redirect303(HTTPException, RoutingException):
 
 
 class PrefixedWSGI(object):
-
     """
     Wrap the application in this middleware and configure the
     front-end server to add these headers, to let you quietly bind
@@ -218,6 +216,7 @@ def csv2list_of_dicts(csv_to_convert):
             continue
         elif r["what"] == "categoryname":
             break
+        # Convert a few fields to the correct type
         r["amount"] = float(r["amount"])
         r["payer_weight"] = float(r["payer_weight"])
         r["owers"] = [o.strip() for o in r["owers"].split(",")]
@@ -271,8 +270,8 @@ def eval_arithmetic_expression(expr):
             ast.USub: operator.neg,
         }
 
-        if isinstance(node, ast.Num):  # <number>
-            return node.n
+        if isinstance(node, ast.Constant) and isinstance(node.value, (int, float)):  # <number>
+            return node.value
         elif isinstance(node, ast.BinOp):  # <left> <operator> <right>
             return operators[type(node.op)](_eval(node.left), _eval(node.right))
         elif isinstance(node, ast.UnaryOp):  # <operator> <operand> e.g., -1
@@ -304,7 +303,16 @@ def get_members(file):
 
 
 def same_bill(bill1, bill2):
-    attr = ["what", "payer_name", "payer_weight", "amount", "currency", "date", "owers"]
+    attr = [
+        "what",
+        "bill_type",
+        "payer_name",
+        "payer_weight",
+        "amount",
+        "currency",
+        "date",
+        "owers",
+    ]
     for a in attr:
         if bill1[a] != bill2[a]:
             return False
@@ -444,7 +452,9 @@ def format_form_errors(form, prefix):
         )
     else:
         error_list = "</li><li>".join(
-            str(error) for (field, errors) in form.errors.items() for error in errors
+            f"<strong>{field}</strong> {error}"
+            for (field, errors) in form.errors.items()
+            for error in errors
         )
         errors = f"<ul><li>{error_list}</li></ul>"
         # I18N: Form error with a list of errors
@@ -461,3 +471,25 @@ def generate_password_hash(*args, **kwargs):
         )
 
     return werkzeug_generate_password_hash(*args, **kwargs)
+
+
+def get_owers_label(active_members, bill_owers):
+    """Return a tuple describing how to display the owers of this bill.
+
+    Uses set-based comparison to handle ordering differences and
+    deactivated members gracefully.
+
+    Returns one of:
+    - ("everyone", None): all active members are owers (superset check)
+    - ("everyone_but", excluded): half of active members (+1 person) are owers
+    - ("list", owers): list of owers
+    """
+    active_set = set(active_members)
+    owers_set = set(bill_owers)
+    if active_set.issubset(owers_set):
+        return ("everyone", None)
+    excluded = [m for m in active_members if m not in owers_set]
+    active_owers_count = len(active_set) - len(excluded)
+    if active_owers_count > len(active_members) / 2 + 1:
+        return ("everyone_but", excluded)
+    return ("list", bill_owers)

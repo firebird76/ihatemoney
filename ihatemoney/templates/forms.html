@@ -95,7 +95,6 @@
         <label for="privacy_checkboxes">{{ _("Privacy Settings") }}</label>
         <div id="privacy_checkboxes" class="card card-body bg-light">
         {{ checkbox(form.project_history) }}
-        {{ checkbox(form.ip_recording) }}
         </div>
     </div>
 
@@ -150,14 +149,6 @@
 
 {% endmacro %}
 
-{% macro delete_ip_addresses(form) %}
-
-    {% include "display_errors.html" %}
-    {{ form.hidden_tag() }}
-    {{ input(form.password) }}
-
-{% endmacro %}
-
 {% macro add_bill(form, edit=False, title=True) %}
 
     <fieldset>
@@ -200,6 +191,7 @@
         {% if g.project.default_currency != "XXX" %}
             {{ input(form.original_currency, inline=True, class="form-control custom-select") }}
         {% endif %}
+        {{ input(form.bill_type, inline=True) }}
         {{ input(form.external_link, inline=True) }}
     </details>
     </fieldset>
@@ -235,7 +227,8 @@
     {{ input(form.weight) }}
     </fieldset>
     <div class="actions">
-        {{ form.submit(class="btn btn-primary") }}
+        <button class="btn btn-secondary input-group-addon" type="submit">{{ _("Save") }}</button>
+        <a href="{{ url_for(".list_bills") }}" class="btn btn-outline-secondary"> {{_("Cancel") }} </a>
     </div>
 {% endmacro %}
 

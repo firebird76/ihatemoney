@@ -3,17 +3,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-29 14:24+0200\n"
-"PO-Revision-Date: 2023-03-19 21:40+0000\n"
-"Last-Translator: Sai Mohammad-Hossein Emami <emami@outlook.com>\n"
+"POT-Creation-Date: 2026-07-21 23:16+0200\n"
+"PO-Revision-Date: 2024-05-23 03:01+0000\n"
+"Last-Translator: Yamin Siahmargooei <yamin8000@yahoo.com>\n"
 "Language: fa\n"
 "Language-Team: Persian <https://hosted.weblate.org/projects/i-hate-"
 "money/i-hate-money/fa/>\n"
-"Plural-Forms: nplurals=1; plural=0\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.9.0\n"
+"Generated-By: Babel 2.16.0\n"
 
 #, python-format
 msgid "You have just created '%(project)s' to share your expenses"
@@ -46,9 +46,6 @@ msgstr "ایمیل"
 msgid "Enable project history"
 msgstr "فعال کردن تاریخچه‌ی پروژه"
 
-msgid "Use IP tracking for project history"
-msgstr "برای تاریخچه‌ی پروژه از ردیابی آدرس IP استفاده شود"
-
 msgid "Default Currency"
 msgstr "واحد پولی پیش فرض"
 
@@ -67,6 +64,10 @@ msgid ""
 msgstr ""
 "این پروژه نمی‌تونه به صورت «بدون واحد پولی» تنظیم بشه چون شامل قبوض با "
 "ارزهای مختلفه."
+
+#, fuzzy
+msgid "Cannot change project currency because currency conversion is broken"
+msgstr "تنظیم واحد پولی پیش فرض امکان تبدیل ارز بین قبض‌ها رو فراهم می‌کنه"
 
 msgid "Compatible with Cospend"
 msgstr ""
@@ -125,16 +126,16 @@ msgid "Reset password"
 msgstr "بازنشانی گذرواژه"
 
 msgid "When?"
-msgstr ""
+msgstr "چه زمانی؟"
 
 msgid "What?"
 msgstr "چی؟"
 
 msgid "Who paid?"
-msgstr ""
+msgstr "چه کسی پرداخت کرد؟"
 
 msgid "How much?"
-msgstr ""
+msgstr "چقدر؟"
 
 msgid "Currency"
 msgstr "واحد پولی"
@@ -148,6 +149,9 @@ msgstr "یه لینک به سند خارجی به این قبض مربوطه"
 msgid "For whom?"
 msgstr "برای کی؟"
 
+msgid "Bill Type"
+msgstr ""
+
 msgid "Submit"
 msgstr "ثبت"
 
@@ -157,6 +161,10 @@ msgstr "ثبت و اضافه کردن جدید"
 #, python-format
 msgid "Project default: %(currency)s"
 msgstr "پیش فرض پروژه: %(currency)s"
+
+#, python-format
+msgid "Failed to convert from %(bill_currency)s currency to %(project_currency)s"
+msgstr ""
 
 msgid "Name"
 msgstr "نام"
@@ -180,14 +188,14 @@ msgid "People to notify"
 msgstr "افرادی که براشون نوتیفیکیشن ارسال میشه"
 
 msgid "Send the invitations"
-msgstr ""
+msgstr "ارسال دعوت نامه ها"
 
 #, python-format
 msgid "The email %(email)s is not valid"
 msgstr "ایمیل %(email)s نامعتبره"
 
 msgid "Logout"
-msgstr ""
+msgstr "خروج"
 
 msgid "Please check the email configuration of the server."
 msgstr ""
@@ -234,6 +242,10 @@ msgstr "گذرواژه‌ی مدیر صحیح نیست. فقط %(num)d بار د
 
 msgid "Provided token is invalid"
 msgstr "توکن وارد شده نامعتبره"
+
+#, fuzzy, python-format
+msgid "This private code is not the right one. Only %(num)d attempts left."
+msgstr "گذرواژه‌ی مدیر صحیح نیست. فقط %(num)d بار دیگه میشه سعی کنی."
 
 msgid "This private code is not the right one"
 msgstr "این کد خصوصی اون کد خصوصی درست نیست"
@@ -344,16 +356,19 @@ msgstr ""
 msgid "%(lang)s is not a supported language"
 msgstr ""
 
+msgid "Error creating settlement bill"
+msgstr ""
+
+msgid "Settlement"
+msgstr ""
+
+msgid "Settlement bill has been successfully added"
+msgstr ""
+
 msgid "Error deleting project history"
 msgstr ""
 
 msgid "Deleted project history."
-msgstr ""
-
-msgid "Error deleting recorded IP addresses"
-msgstr ""
-
-msgid "Deleted recorded IP addresses in project history."
 msgstr ""
 
 msgid "Sorry, we were unable to find the page you've asked for."
@@ -486,6 +501,9 @@ msgstr ""
 msgid "Edit this participant"
 msgstr ""
 
+msgid "Save"
+msgstr ""
+
 msgid "john.doe@example.com, mary.moe@site.com"
 msgstr ""
 
@@ -495,22 +513,10 @@ msgstr ""
 msgid "Disabled Project History"
 msgstr ""
 
-msgid "Disabled Project History & IP Address Recording"
-msgstr ""
-
 msgid "Enabled Project History"
 msgstr ""
 
-msgid "Disabled IP Address Recording"
-msgstr ""
-
-msgid "Enabled Project History & IP Address Recording"
-msgstr ""
-
-msgid "Enabled IP Address Recording"
-msgstr ""
-
-msgid "History Settings Changed"
+msgid "History Settings Changed (legacy settings)"
 msgstr ""
 
 #, python-format
@@ -521,28 +527,18 @@ msgstr ""
 msgid "Bill %(name)s: %(property_name)s changed to %(after)s"
 msgstr ""
 
-msgid "Confirm Remove IP Adresses"
-msgstr ""
-
-msgid ""
-"Are you sure you want to delete all recorded IP addresses from this "
-"project?\n"
-"                The rest of the project history will be unaffected. This "
-"action cannot be undone."
-msgstr ""
-
-msgid "Confirm deletion"
-msgstr ""
-
-msgid "Close"
-msgstr ""
-
 msgid "Delete Confirmation"
 msgstr ""
 
 msgid ""
 "Are you sure you want to erase all history for this project? This action "
 "cannot be undone."
+msgstr ""
+
+msgid "Confirm deletion"
+msgstr ""
+
+msgid "Close"
 msgstr ""
 
 #, python-format
@@ -552,6 +548,30 @@ msgstr ""
 #, python-format
 msgid "Bill %(name)s: removed %(owers_list_str)s from owers list"
 msgstr ""
+
+msgid "Details of the bill (before the change)"
+msgstr ""
+
+msgid "Details of the bill"
+msgstr ""
+
+#, fuzzy
+msgid "Date:"
+msgstr "تاریخ"
+
+#, fuzzy
+msgid "Payer:"
+msgstr "پرداخت کننده"
+
+msgid "Amount:"
+msgstr ""
+
+msgid "Owers:"
+msgstr ""
+
+#, fuzzy
+msgid "External link:"
+msgstr "لینک خارجی"
 
 msgid "This project has history disabled. New actions won't appear below."
 msgstr ""
@@ -567,20 +587,6 @@ msgstr ""
 msgid "You can clear the project history to remove them."
 msgstr ""
 
-msgid ""
-"Some entries below contain IP addresses, even though this project has IP "
-"recording disabled. "
-msgstr ""
-
-msgid "Delete stored IP addresses"
-msgstr ""
-
-msgid "No IP Addresses to erase"
-msgstr ""
-
-msgid "Delete Stored IP Addresses"
-msgstr ""
-
 msgid "No history to erase"
 msgstr ""
 
@@ -591,15 +597,6 @@ msgid "Time"
 msgstr ""
 
 msgid "Event"
-msgstr ""
-
-msgid "IP address recording can be enabled on the settings page"
-msgstr ""
-
-msgid "IP address recording can be disabled on the settings page"
-msgstr ""
-
-msgid "From IP"
 msgstr ""
 
 #, python-format
@@ -629,23 +626,7 @@ msgid "Project settings modified"
 msgstr ""
 
 #, python-format
-msgid "Participant %(name)s deactivated"
-msgstr ""
-
-#, python-format
-msgid "Participant %(name)s reactivated"
-msgstr ""
-
-#, python-format
-msgid "Participant %(name)s renamed to %(new_name)s"
-msgstr ""
-
-#, python-format
 msgid "Bill %(name)s renamed to %(new_description)s"
-msgstr ""
-
-#, python-format
-msgid "Participant %(name)s: weight changed from %(old_weight)s to %(new_weight)s"
 msgstr ""
 
 msgid "Payer"
@@ -663,6 +644,22 @@ msgstr ""
 
 #, python-format
 msgid "Bill %(name)s modified"
+msgstr ""
+
+#, python-format
+msgid "Participant %(name)s deactivated"
+msgstr ""
+
+#, python-format
+msgid "Participant %(name)s reactivated"
+msgstr ""
+
+#, python-format
+msgid "Participant %(name)s renamed to %(new_name)s"
+msgstr ""
+
+#, python-format
+msgid "Participant %(name)s: weight changed from %(old_weight)s to %(new_weight)s"
 msgstr ""
 
 #, python-format
@@ -782,7 +779,7 @@ msgstr ""
 msgid "Documentation"
 msgstr ""
 
-msgid "Administation Dashboard"
+msgid "Administration Dashboard"
 msgstr ""
 
 msgid "Legal information"
@@ -801,6 +798,12 @@ msgstr ""
 msgid "you sure?"
 msgstr ""
 
+msgid "Hide filters"
+msgstr ""
+
+msgid "Show filters"
+msgstr ""
+
 msgid "Invite people"
 msgstr ""
 
@@ -810,10 +813,48 @@ msgstr ""
 msgid "Older bills"
 msgstr ""
 
+msgid "Toggle filters"
+msgstr ""
+
 msgid "You should start by adding participants"
 msgstr ""
 
 msgid "Add a new bill"
+msgstr ""
+
+msgid "Search"
+msgstr ""
+
+msgid "Search in For what?"
+msgstr ""
+
+#, fuzzy
+msgid "Any payer"
+msgstr "پرداخت کننده"
+
+msgid "Start date"
+msgstr ""
+
+#, fuzzy
+msgid "End date"
+msgstr "تاریخ"
+
+msgid "Amount min"
+msgstr ""
+
+msgid "Min cost"
+msgstr ""
+
+msgid "Amount max"
+msgstr ""
+
+msgid "Max cost"
+msgstr ""
+
+msgid "Filter"
+msgstr ""
+
+msgid "Clear filters"
 msgstr ""
 
 msgid "For what?"
@@ -913,6 +954,15 @@ msgstr ""
 msgid "To whom?"
 msgstr ""
 
+msgid "Settled?"
+msgstr ""
+
+msgid "Click here to record that the money transfer has been done"
+msgstr ""
+
+msgid "Register settlement"
+msgstr ""
+
 msgid "Who?"
 msgstr ""
 
@@ -928,10 +978,16 @@ msgstr ""
 msgid "Paid"
 msgstr ""
 
-msgid "Spent"
+msgid "Expenses"
 msgstr ""
 
-msgid "Expenses by Month"
+msgid "Direct transfer"
+msgstr ""
+
+msgid "Received"
+msgstr ""
+
+msgid "Expenses by month"
 msgstr ""
 
 msgid "Period"
@@ -1091,5 +1147,71 @@ msgstr ""
 #~ "management project and we will send "
 #~ "them an email with the invitation "
 #~ "link."
+#~ msgstr ""
+
+#~ msgid "Spent"
+#~ msgstr ""
+
+#~ msgid "Expenses by Month"
+#~ msgstr ""
+
+#~ msgid "Use IP tracking for project history"
+#~ msgstr "برای تاریخچه‌ی پروژه از ردیابی آدرس IP استفاده شود"
+
+#~ msgid "Error deleting recorded IP addresses"
+#~ msgstr ""
+
+#~ msgid "Deleted recorded IP addresses in project history."
+#~ msgstr ""
+
+#~ msgid "Disabled Project History & IP Address Recording"
+#~ msgstr ""
+
+#~ msgid "Disabled IP Address Recording"
+#~ msgstr ""
+
+#~ msgid "Enabled Project History & IP Address Recording"
+#~ msgstr ""
+
+#~ msgid "Enabled IP Address Recording"
+#~ msgstr ""
+
+#~ msgid "History Settings Changed"
+#~ msgstr ""
+
+#~ msgid "Confirm Remove IP Adresses"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Are you sure you want to delete"
+#~ " all recorded IP addresses from this"
+#~ " project?\n"
+#~ "                The rest of the project"
+#~ " history will be unaffected. This "
+#~ "action cannot be undone."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Some entries below contain IP addresses,"
+#~ " even though this project has IP "
+#~ "recording disabled. "
+#~ msgstr ""
+
+#~ msgid "Delete stored IP addresses"
+#~ msgstr ""
+
+#~ msgid "No IP Addresses to erase"
+#~ msgstr ""
+
+#~ msgid "Delete Stored IP Addresses"
+#~ msgstr ""
+
+#~ msgid "IP address recording can be enabled on the settings page"
+#~ msgstr ""
+
+#~ msgid "IP address recording can be disabled on the settings page"
+#~ msgstr ""
+
+#~ msgid "From IP"
 #~ msgstr ""
 

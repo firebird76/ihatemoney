@@ -1,19 +1,19 @@
+
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-29 14:24+0200\n"
-"PO-Revision-Date: 2023-08-20 00:58+0000\n"
-"Last-Translator: Ettore Atalan <atalanttore@googlemail.com>\n"
-"Language-Team: German <https://hosted.weblate.org/projects/i-hate-money/"
-"i-hate-money/de/>\n"
+"POT-Creation-Date: 2026-07-21 23:16+0200\n"
+"PO-Revision-Date: 2024-02-24 00:03+0000\n"
+"Last-Translator: Peter <peteramried@web.de>\n"
 "Language: de\n"
+"Language-Team: German <https://hosted.weblate.org/projects/i-hate-money/i"
+"-hate-money/de/>\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.0-dev\n"
-"Generated-By: Babel 2.9.0\n"
+"Generated-By: Babel 2.16.0\n"
 
 #, python-format
 msgid "You have just created '%(project)s' to share your expenses"
@@ -35,7 +35,7 @@ msgid "Current private code"
 msgstr "Aktueller privater Code"
 
 msgid "Enter existing private code to edit project"
-msgstr ""
+msgstr "Geben Sie Ihren privaten Code ein, um das Projekt zu bearbeiten"
 
 msgid "New private code"
 msgstr "Neuer privater Code"
@@ -48,9 +48,6 @@ msgstr "E-Mail"
 
 msgid "Enable project history"
 msgstr "Projekthistorie aktivieren"
-
-msgid "Use IP tracking for project history"
-msgstr "IP Tracking für die Projekt-Historie verwenden"
 
 msgid "Default Currency"
 msgstr "Standardwährung"
@@ -72,6 +69,12 @@ msgid ""
 msgstr ""
 "Dieses Projekt kann nicht auf \"ohne Währung\" eingestellt werden, weil "
 "es Rechnungen unterschiedlicher Währungen enthält."
+
+#, fuzzy
+msgid "Cannot change project currency because currency conversion is broken"
+msgstr ""
+"Das Festlegen einer Standardwährung ermöglicht die Währungsumrechnung "
+"zwischen Rechnungen"
 
 msgid "Compatible with Cospend"
 msgstr "Kompatibel mit Cospend"
@@ -155,6 +158,10 @@ msgstr ""
 msgid "For whom?"
 msgstr "Für wen?"
 
+#, fuzzy
+msgid "Bill Type"
+msgstr "Rechungsposition"
+
 msgid "Submit"
 msgstr "Hinzufügen"
 
@@ -164,6 +171,10 @@ msgstr "Hinzufügen und neuen erstellen"
 #, python-format
 msgid "Project default: %(currency)s"
 msgstr "Projekt Standardwährung: %(currency)s"
+
+#, python-format
+msgid "Failed to convert from %(bill_currency)s currency to %(project_currency)s"
+msgstr ""
 
 msgid "Name"
 msgstr "Name"
@@ -197,16 +208,15 @@ msgid "Logout"
 msgstr "Ausloggen"
 
 msgid "Please check the email configuration of the server."
-msgstr ""
+msgstr "Bitte überprüfen Sie die E-Mail Konfiguration des Servers."
 
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "Please check the email configuration of the server or contact the "
 "administrator: %(admin_email)s"
 msgstr ""
-"Entschuldigung, es trat ein Fehler beim Versenden der Einladungsmails "
-"auf. Bitte überprüfe die E-Mail Konfiguration des Servers oder "
-"kontaktiere einen Administrator."
+"Bitte überprüfe die E-Mail Konfiguration des Servers oder kontaktiere "
+"einen Administrator: %(admin_email)s"
 
 #. List with two items only
 msgid "{dual_object_0} and {dual_object_1}"
@@ -235,11 +245,8 @@ msgstr "{prefix}: {error}"
 msgid "{prefix}:<br />{errors}"
 msgstr "{prefix}:<br />{errors}"
 
-#, fuzzy
 msgid "Too many failed login attempts."
-msgstr ""
-"Zu viele fehlgeschlagene Anmeldeversuche, bitte versuche es später "
-"nochmal."
+msgstr "Zu viele fehlgeschlagene Anmeldeversuche."
 
 #, python-format
 msgid "This admin password is not the right one. Only %(num)d attempts left."
@@ -249,6 +256,12 @@ msgstr ""
 
 msgid "Provided token is invalid"
 msgstr "Bereitgestelltes Token ist ungültig"
+
+#, fuzzy, python-format
+msgid "This private code is not the right one. Only %(num)d attempts left."
+msgstr ""
+"Das Administrator-Passwort ist nicht korrekt. Noch %(num)d Versuch(e) "
+"verbleibend."
 
 msgid "This private code is not the right one"
 msgstr "Der private Code ist nicht korrekt"
@@ -284,15 +297,16 @@ msgstr "Unbekanntes Projekt"
 msgid "Password successfully reset."
 msgstr "Passwort erfolgreich zurückgesetzt."
 
+#, fuzzy
 msgid "Project settings have been changed successfully."
-msgstr ""
+msgstr "Einstellungen wurden erfolgreich übernommen."
 
 msgid "Unable to parse CSV"
 msgstr ""
 
-#, python-format
+#, fuzzy, python-format
 msgid "Missing attribute: %(attribute)s"
-msgstr ""
+msgstr "Fehlendes Attribut: %(attribute)s"
 
 msgid ""
 "Cannot add bills in multiple currencies to a project without default "
@@ -311,7 +325,7 @@ msgid "Error deleting project"
 msgstr "Fehler bei Projektlöschung"
 
 msgid "Unable to logout"
-msgstr ""
+msgstr "Verlassen nicht möglich"
 
 #, python-format
 msgid "You have been invited to share your expenses for %(project)s"
@@ -320,12 +334,8 @@ msgstr "Du wurdest eingeladen, deine Ausgaben für %(project)s zu teilen"
 msgid "Your invitations have been sent"
 msgstr "Deine Einladungen wurden versendet"
 
-#, fuzzy
 msgid "Sorry, there was an error while trying to send the invitation emails."
-msgstr ""
-"Entschuldigung, es trat ein Fehler beim Versenden der Einladungsmails "
-"auf. Bitte überprüfe die E-Mail Konfiguration des Servers oder "
-"kontaktiere einen Administrator."
+msgstr "Entschuldigung, es trat ein Fehler beim Versenden der Einladungsmails auf."
 
 #, python-format
 msgid "%(member)s has been added"
@@ -371,19 +381,25 @@ msgstr "Die Ausgabe wurde bearbeitet"
 
 #, python-format
 msgid "%(lang)s is not a supported language"
-msgstr ""
+msgstr "%(lang)s ist keine unterstützte Sprache"
+
+#, fuzzy
+msgid "Error creating settlement bill"
+msgstr "Fehler beim Löschen der Ausgabe"
+
+#, fuzzy
+msgid "Settlement"
+msgstr "Bilanz"
+
+#, fuzzy
+msgid "Settlement bill has been successfully added"
+msgstr "Die Ausgabe wurde hinzugefügt"
 
 msgid "Error deleting project history"
 msgstr "Projekthistorie konnte nicht gelöscht werden"
 
 msgid "Deleted project history."
 msgstr "Projekthistorie gelöscht."
-
-msgid "Error deleting recorded IP addresses"
-msgstr "Gespeicherte IP-Adressen konnten nicht gelöscht werden"
-
-msgid "Deleted recorded IP addresses in project history."
-msgstr "Gespeicherte IP-Adresse wurde in Projekthistorie gelöscht."
 
 msgid "Sorry, we were unable to find the page you've asked for."
 msgstr "Entschuldigung, wir können die angefragte Seite nicht finden."
@@ -486,7 +502,7 @@ msgstr "Dies wird alle Ausgaben und Mitglieder dieses Projektes löschen!"
 
 #, fuzzy
 msgid "Import previously exported project"
-msgstr "Zuvor exportierte JSON-Datei importieren"
+msgstr "Zuvor exportierte Projekt-Datei importieren"
 
 msgid "Choose file"
 msgstr "Datei auswählen"
@@ -497,8 +513,9 @@ msgstr "Ausgabe bearbeiten"
 msgid "Add a bill"
 msgstr "Ausgabe hinzufügen"
 
+#, fuzzy
 msgid "Simple operations are allowed, e.g. (18+36.2)/3"
-msgstr ""
+msgstr "einfache Operationen sind erlaubt, z.B. (18+36.2)/3"
 
 msgid "Everyone"
 msgstr "Jeder"
@@ -515,6 +532,9 @@ msgstr "Teilnehmer hinzufügen"
 msgid "Edit this participant"
 msgstr "Diesen Benutzer bearbeiten"
 
+msgid "Save"
+msgstr ""
+
 msgid "john.doe@example.com, mary.moe@site.com"
 msgstr "max.mustermann@beispiel.com, mary.moe@site.com"
 
@@ -524,22 +544,11 @@ msgstr "Herunterladen"
 msgid "Disabled Project History"
 msgstr "Projektverlauf deaktivieren"
 
-msgid "Disabled Project History & IP Address Recording"
-msgstr "Projektverlauf & IP-Adresserfassung deaktivieren"
-
 msgid "Enabled Project History"
 msgstr "Projektverlauf aktivieren"
 
-msgid "Disabled IP Address Recording"
-msgstr "IP-Adresserfassung deaktivieren"
-
-msgid "Enabled Project History & IP Address Recording"
-msgstr "Projektverlauf & IP-Adresserfassung aktivieren"
-
-msgid "Enabled IP Address Recording"
-msgstr "IP-Adresserfassung aktivieren"
-
-msgid "History Settings Changed"
+#, fuzzy
+msgid "History Settings Changed (legacy settings)"
 msgstr "Verlaufseinstellungen geändert"
 
 #, python-format
@@ -552,26 +561,6 @@ msgstr ""
 msgid "Bill %(name)s: %(property_name)s changed to %(after)s"
 msgstr "Ausgabe %(name)s: %(property_name)s geändert zu %(after)s"
 
-msgid "Confirm Remove IP Adresses"
-msgstr "Bestätige IP-Adressentfernung"
-
-msgid ""
-"Are you sure you want to delete all recorded IP addresses from this "
-"project?\n"
-"                The rest of the project history will be unaffected. This "
-"action cannot be undone."
-msgstr ""
-"Bist du sicher, dass alle aufgezeichneten IP-Adressen dieses Projekts "
-"gelöscht werden sollen?\n"
-"Der restliche Projektverlauf bleibt unverändert. Diese Aktion kann nicht "
-"rückgängig gemacht werden."
-
-msgid "Confirm deletion"
-msgstr "Löschung bestätigen"
-
-msgid "Close"
-msgstr "Schließen"
-
 msgid "Delete Confirmation"
 msgstr "Bestätigung löschen"
 
@@ -582,6 +571,12 @@ msgstr ""
 "Bist du sicher, dass der gesamte Projektverlauf gelöscht werden soll? "
 "Dies kann nicht rückgängig gemacht werden."
 
+msgid "Confirm deletion"
+msgstr "Löschung bestätigen"
+
+msgid "Close"
+msgstr "Schließen"
+
 #, python-format
 msgid "Bill %(name)s: added %(owers_list_str)s to owers list"
 msgstr "Rechnung %(name)s: %(owers_list_str)s zur Eigentümerliste hinzugefügt"
@@ -590,12 +585,40 @@ msgstr "Rechnung %(name)s: %(owers_list_str)s zur Eigentümerliste hinzugefügt"
 msgid "Bill %(name)s: removed %(owers_list_str)s from owers list"
 msgstr "Rechnung %(name)s: %(owers_list_str)s von der Eigentümerliste entfernt"
 
-msgid "This project has history disabled. New actions won't appear below."
+msgid "Details of the bill (before the change)"
 msgstr ""
 
 #, fuzzy
+msgid "Details of the bill"
+msgstr "Ausgabe bearbeiten"
+
+#, fuzzy
+msgid "Date:"
+msgstr "Datum"
+
+#, fuzzy
+msgid "Payer:"
+msgstr "Von"
+
+#, fuzzy
+msgid "Amount:"
+msgstr "Betrag"
+
+msgid "Owers:"
+msgstr ""
+
+#, fuzzy
+msgid "External link:"
+msgstr "Externer Link"
+
+#, fuzzy
+msgid "This project has history disabled. New actions won't appear below."
+msgstr ""
+"Dieses Projekt hat den Projektverlauf deaktiviert. Neue Aktionen werden "
+"unten nicht mehr angezeigt."
+
 msgid "You can enable history on the settings page."
-msgstr "IP-Adresserfassung kann in den Einstellungen aktiviert werden"
+msgstr "Der Verlauf kann in den Einstellungen aktiviert werden."
 
 msgid ""
 "The table below reflects actions recorded prior to disabling project "
@@ -605,22 +628,6 @@ msgstr ""
 #, fuzzy
 msgid "You can clear the project history to remove them."
 msgstr "Wahrscheinlich hat jemand den Projektverlauf gelöscht."
-
-msgid ""
-"Some entries below contain IP addresses, even though this project has IP "
-"recording disabled. "
-msgstr ""
-"Einige der folgenden Einträge enthalten IP-Adressen, wenngleich die IP-"
-"Erfassung dieses Projekts deaktiviert ist. "
-
-msgid "Delete stored IP addresses"
-msgstr "Gespeicherte IP-Adressen löschen"
-
-msgid "No IP Addresses to erase"
-msgstr "Keine IP-Adressen zu löschen"
-
-msgid "Delete Stored IP Addresses"
-msgstr "Gespeicherte IP-Adressen löschen"
 
 msgid "No history to erase"
 msgstr "Kein Verlauf zu löschen"
@@ -633,15 +640,6 @@ msgstr "Zeit"
 
 msgid "Event"
 msgstr "Ereignis"
-
-msgid "IP address recording can be enabled on the settings page"
-msgstr "IP-Adresserfassung kann in den Einstellungen aktiviert werden"
-
-msgid "IP address recording can be disabled on the settings page"
-msgstr "Die IP-Adresserfassung kann in den Einstellungen deaktiviert werden"
-
-msgid "From IP"
-msgstr "Von IP"
 
 #, python-format
 msgid "Project %(name)s added"
@@ -670,26 +668,8 @@ msgid "Project settings modified"
 msgstr "Projekteinstellungen geändert"
 
 #, python-format
-msgid "Participant %(name)s deactivated"
-msgstr "Teilnehmer %(name)s gelöscht"
-
-#, python-format
-msgid "Participant %(name)s reactivated"
-msgstr "Teilnehmer %(name)s reaktiviert"
-
-#, python-format
-msgid "Participant %(name)s renamed to %(new_name)s"
-msgstr "Teilnehmer %(name)s zu %(new_name)s umbenannt"
-
-#, python-format
 msgid "Bill %(name)s renamed to %(new_description)s"
 msgstr "Ausgabe %(name)s wurde zu %(new_description)s umbenannt"
-
-#, python-format
-msgid "Participant %(name)s: weight changed from %(old_weight)s to %(new_weight)s"
-msgstr ""
-"Teinehmer %(name)s: Gewichtung von %(old_weight)s auf %(new_weight)s "
-"geändert"
 
 msgid "Payer"
 msgstr "Von"
@@ -707,6 +687,24 @@ msgstr "Betrag in %(currency)s"
 #, python-format
 msgid "Bill %(name)s modified"
 msgstr "Ausgabe %(name)s wurde bearbeitet"
+
+#, python-format
+msgid "Participant %(name)s deactivated"
+msgstr "Teilnehmer %(name)s gelöscht"
+
+#, python-format
+msgid "Participant %(name)s reactivated"
+msgstr "Teilnehmer %(name)s reaktiviert"
+
+#, python-format
+msgid "Participant %(name)s renamed to %(new_name)s"
+msgstr "Teilnehmer %(name)s zu %(new_name)s umbenannt"
+
+#, python-format
+msgid "Participant %(name)s: weight changed from %(old_weight)s to %(new_weight)s"
+msgstr ""
+"Teinehmer %(name)s: Gewichtung von %(old_weight)s auf %(new_weight)s "
+"geändert"
 
 #, python-format
 msgid "Participant %(name)s modified"
@@ -816,7 +814,7 @@ msgstr "Dashboard"
 
 #, python-format
 msgid "Please retry after %(date)s."
-msgstr ""
+msgstr "Bitte nach %(date)s erneut versuchen."
 
 msgid "Code"
 msgstr "Code"
@@ -827,7 +825,7 @@ msgstr "Handy-Applikation"
 msgid "Documentation"
 msgstr "Dokumentation"
 
-msgid "Administation Dashboard"
+msgid "Administration Dashboard"
 msgstr "Dashboard Administration"
 
 msgid "Legal information"
@@ -846,6 +844,14 @@ msgstr "jeweils %(amount)s"
 msgid "you sure?"
 msgstr "Bist du sicher?"
 
+#, fuzzy
+msgid "Hide filters"
+msgstr "ID:"
+
+#, fuzzy
+msgid "Show filters"
+msgstr "Datei auswählen"
+
 msgid "Invite people"
 msgstr "Leute einladen"
 
@@ -855,11 +861,52 @@ msgstr "Aktuellere Rechnungen"
 msgid "Older bills"
 msgstr "Ältere Rechnungen"
 
+msgid "Toggle filters"
+msgstr ""
+
 msgid "You should start by adding participants"
 msgstr "Du kannst anfangen, Teilnehmer hinzuzufügen"
 
 msgid "Add a new bill"
 msgstr "Neue Ausgabe"
+
+msgid "Search"
+msgstr ""
+
+#, fuzzy
+msgid "Search in For what?"
+msgstr "Wofür?"
+
+#, fuzzy
+msgid "Any payer"
+msgstr "Von"
+
+msgid "Start date"
+msgstr ""
+
+#, fuzzy
+msgid "End date"
+msgstr "Datum"
+
+#, fuzzy
+msgid "Amount min"
+msgstr "Betrag"
+
+msgid "Min cost"
+msgstr ""
+
+#, fuzzy
+msgid "Amount max"
+msgstr "Betrag"
+
+msgid "Max cost"
+msgstr ""
+
+msgid "Filter"
+msgstr ""
+
+msgid "Clear filters"
+msgstr ""
 
 msgid "For what?"
 msgstr "Wofür?"
@@ -881,9 +928,8 @@ msgstr "Keine Ausgaben"
 msgid "Nothing to list yet."
 msgstr "Noch nichts aufzulisten."
 
-#, fuzzy
 msgid "Add your first bill"
-msgstr "eine Ausgabe hinzufügen"
+msgstr "Mach deine erste Rechnung"
 
 #, fuzzy
 msgid "Add the first participant"
@@ -912,7 +958,7 @@ msgid "Invite people to join this project"
 msgstr "Lade Leute ein, diesem Projekt beizutreten"
 
 msgid "Share an invitation link"
-msgstr ""
+msgstr "Einladung verschicken"
 
 msgid ""
 "The easiest way to invite people is to give them the following invitation"
@@ -920,26 +966,29 @@ msgid ""
 " add/edit/delete bills. However, they will not have access to important "
 "settings such as changing the private code or deleting the whole project."
 msgstr ""
+"Am einfachsten lädt man jemanden ein, indem man folgenden Einladungs-Link"
+" teilt. <br /> Sie werden dann in der Lage sein dem Projekt beizutreten, "
+"zu bearbeiten und Rechnungen hinzuzufügen, bearbeiten und löschen. Sie "
+"werden allerdings keinen Zugriff auf wichtige Einstellungen bekommen, wie"
+" Privaten Code zu ändern oder gar das ganze Projekt zu löschen."
 
 msgid "Scan QR code"
-msgstr ""
+msgstr "QR-Code scannen"
 
 msgid "Use a mobile device with a compatible app."
-msgstr ""
+msgstr "Benutzen sie ein Smartphone mit Kompatibler App."
 
 msgid "Send via Emails"
 msgstr "Per E-Mail versenden"
 
-#, fuzzy
 msgid ""
 "Specify a list of email adresses (separated by comma) of people you want "
 "to notify about the creation of this project. We will send them an email "
 "with the invitation link."
 msgstr ""
 "Gib eine (durch Kommas getrennte) Liste von E-Mail-Adressen an, die du "
-"über die\n"
-"\t\t\tErstellung dieses Projekts informieren möchtest, und wir senden "
-"ihnen eine E-Mail."
+"über die Erstellung dieses Projekts informieren möchtest, und wir werden "
+"ihnen eine E-Mail senden."
 
 msgid "Share Identifier & code"
 msgstr "Teile die ID & den Code"
@@ -954,18 +1003,28 @@ msgstr ""
 msgid "Identifier:"
 msgstr "ID:"
 
-#, fuzzy
 msgid "Private code:"
-msgstr "Privater Code"
+msgstr "Privater Code:"
 
 msgid "the private code was defined when you created the project"
-msgstr ""
+msgstr "Der Private Code wurde beim erstellen des Projekts von Ihnen festgelegt"
 
 msgid "Who pays?"
 msgstr "Wer zahlt?"
 
 msgid "To whom?"
 msgstr "An wen?"
+
+#, fuzzy
+msgid "Settled?"
+msgstr "Bilanz"
+
+msgid "Click here to record that the money transfer has been done"
+msgstr ""
+
+#, fuzzy
+msgid "Register settlement"
+msgstr "Bilanz"
 
 msgid "Who?"
 msgstr "Wer?"
@@ -982,10 +1041,19 @@ msgstr "reaktivieren"
 msgid "Paid"
 msgstr "Bezahlt"
 
-msgid "Spent"
-msgstr "Ausgegeben"
+#, fuzzy
+msgid "Expenses"
+msgstr "Ausgaben je Monat"
 
-msgid "Expenses by Month"
+msgid "Direct transfer"
+msgstr ""
+
+#, fuzzy
+msgid "Received"
+msgstr "reaktivieren"
+
+#, fuzzy
+msgid "Expenses by month"
 msgstr "Ausgaben je Monat"
 
 msgid "Period"
@@ -1186,3 +1254,73 @@ msgstr "Zeitraum"
 
 #~ msgid "You can directly share the following link via your prefered medium"
 #~ msgstr "Du kannst den folgenden Link direkt über dein bevorzugtes Medium teilen"
+
+#~ msgid "Spent"
+#~ msgstr "Ausgegeben"
+
+#~ msgid "Use IP tracking for project history"
+#~ msgstr "IP Tracking für die Projekt-Historie verwenden"
+
+#~ msgid "Error deleting recorded IP addresses"
+#~ msgstr "Gespeicherte IP-Adressen konnten nicht gelöscht werden"
+
+#~ msgid "Deleted recorded IP addresses in project history."
+#~ msgstr "Gespeicherte IP-Adresse wurde in Projekthistorie gelöscht."
+
+#~ msgid "Disabled Project History & IP Address Recording"
+#~ msgstr "Projektverlauf & IP-Adresserfassung deaktivieren"
+
+#~ msgid "Disabled IP Address Recording"
+#~ msgstr "IP-Adresserfassung deaktivieren"
+
+#~ msgid "Enabled Project History & IP Address Recording"
+#~ msgstr "Projektverlauf & IP-Adresserfassung aktivieren"
+
+#~ msgid "Enabled IP Address Recording"
+#~ msgstr "IP-Adresserfassung aktivieren"
+
+#~ msgid "Confirm Remove IP Adresses"
+#~ msgstr "Bestätige IP-Adressentfernung"
+
+#~ msgid ""
+#~ "Are you sure you want to delete"
+#~ " all recorded IP addresses from this"
+#~ " project?\n"
+#~ "                The rest of the project"
+#~ " history will be unaffected. This "
+#~ "action cannot be undone."
+#~ msgstr ""
+#~ "Bist du sicher, dass alle "
+#~ "aufgezeichneten IP-Adressen dieses Projekts"
+#~ " gelöscht werden sollen?\n"
+#~ "Der restliche Projektverlauf bleibt "
+#~ "unverändert. Diese Aktion kann nicht "
+#~ "rückgängig gemacht werden."
+
+#~ msgid ""
+#~ "Some entries below contain IP addresses,"
+#~ " even though this project has IP "
+#~ "recording disabled. "
+#~ msgstr ""
+#~ "Einige der folgenden Einträge enthalten "
+#~ "IP-Adressen, wenngleich die IP-Erfassung"
+#~ " dieses Projekts deaktiviert ist. "
+
+#~ msgid "Delete stored IP addresses"
+#~ msgstr "Gespeicherte IP-Adressen löschen"
+
+#~ msgid "No IP Addresses to erase"
+#~ msgstr "Keine IP-Adressen zu löschen"
+
+#~ msgid "Delete Stored IP Addresses"
+#~ msgstr "Gespeicherte IP-Adressen löschen"
+
+#~ msgid "IP address recording can be enabled on the settings page"
+#~ msgstr "IP-Adresserfassung kann in den Einstellungen aktiviert werden"
+
+#~ msgid "IP address recording can be disabled on the settings page"
+#~ msgstr "Die IP-Adresserfassung kann in den Einstellungen deaktiviert werden"
+
+#~ msgid "From IP"
+#~ msgstr "Von IP"
+

@@ -3,18 +3,18 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-29 14:24+0200\n"
+"POT-Creation-Date: 2026-07-21 23:16+0200\n"
 "PO-Revision-Date: 2022-04-11 17:12+0000\n"
 "Last-Translator: Santiago José Gutiérrez Llanos "
 "<gutierrezapata17@gmail.com>\n"
 "Language: id\n"
 "Language-Team: Indonesian <https://hosted.weblate.org/projects/i-hate-"
 "money/i-hate-money/id/>\n"
-"Plural-Forms: nplurals=1; plural=0\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.9.0\n"
+"Generated-By: Babel 2.16.0\n"
 
 #, python-format
 msgid "You have just created '%(project)s' to share your expenses"
@@ -49,9 +49,6 @@ msgstr "Surel"
 msgid "Enable project history"
 msgstr "Aktifkan riwayat proyek"
 
-msgid "Use IP tracking for project history"
-msgstr "Gunakan pelacakan IP untuk riwayat proyek"
-
 msgid "Default Currency"
 msgstr "Mata Uang Standar"
 
@@ -70,6 +67,10 @@ msgid ""
 msgstr ""
 "Proyek ini tidak dapat disetel ke 'tanpa mata uang' karena berisi tagihan"
 " dalam berbagai mata uang."
+
+#, fuzzy
+msgid "Cannot change project currency because currency conversion is broken"
+msgstr "Menetapkan mata uang default memungkinkan konversi mata uang antar tagihan"
 
 msgid "Compatible with Cospend"
 msgstr ""
@@ -151,6 +152,10 @@ msgstr "Sebuah tautan mengarah ke dokumen luar, terhubung dengan pembayaran ini"
 msgid "For whom?"
 msgstr "Untuk siapa?"
 
+#, fuzzy
+msgid "Bill Type"
+msgstr "Item tagihan"
+
 msgid "Submit"
 msgstr "Ajukan"
 
@@ -160,6 +165,10 @@ msgstr "Ajukan dan tambah yang baru"
 #, python-format
 msgid "Project default: %(currency)s"
 msgstr "Default proyek: %(currency)s"
+
+#, python-format
+msgid "Failed to convert from %(bill_currency)s currency to %(project_currency)s"
+msgstr ""
 
 msgid "Name"
 msgstr "Nama"
@@ -240,6 +249,10 @@ msgstr "Kata sandi admin ini tidak cocok. Hanya tinggal %(num)d percobaan lagi."
 
 msgid "Provided token is invalid"
 msgstr "Token yang disediakan tidak valid"
+
+#, fuzzy, python-format
+msgid "This private code is not the right one. Only %(num)d attempts left."
+msgstr "Kata sandi admin ini tidak cocok. Hanya tinggal %(num)d percobaan lagi."
 
 msgid "This private code is not the right one"
 msgstr "Kode pribadi ini tidak benar"
@@ -361,17 +374,23 @@ msgstr "Tagihan telah diperbarui"
 msgid "%(lang)s is not a supported language"
 msgstr ""
 
+#, fuzzy
+msgid "Error creating settlement bill"
+msgstr "Kesalahan saat menghapus tagihan"
+
+#, fuzzy
+msgid "Settlement"
+msgstr "Atur"
+
+#, fuzzy
+msgid "Settlement bill has been successfully added"
+msgstr "Tagihan telah ditambahkan"
+
 msgid "Error deleting project history"
 msgstr "Kesalahan saat menghapus riwayat proyek"
 
 msgid "Deleted project history."
 msgstr "Rriwayat proyek terhapus."
-
-msgid "Error deleting recorded IP addresses"
-msgstr "Kesalahan menghapus alamat IP yang disimpan"
-
-msgid "Deleted recorded IP addresses in project history."
-msgstr "Terhapus alamat IP yang disimpan dalam riwayat proyek."
 
 msgid "Sorry, we were unable to find the page you've asked for."
 msgstr "Maaf, kami tidak bisa menemukan halaman yang Anda minta."
@@ -504,6 +523,9 @@ msgstr "Tambah partisipan"
 msgid "Edit this participant"
 msgstr "Sunting anggota ini"
 
+msgid "Save"
+msgstr ""
+
 msgid "john.doe@example.com, mary.moe@site.com"
 msgstr "john.doe@example.com, mary.moe@site.com"
 
@@ -513,22 +535,11 @@ msgstr "Unduh"
 msgid "Disabled Project History"
 msgstr "Nonaktifkan riwayat proyek"
 
-msgid "Disabled Project History & IP Address Recording"
-msgstr "Nonaktifkan riwayat proyek & rekaman alamat IP"
-
 msgid "Enabled Project History"
 msgstr "Riwayat Proyek yang Diaktifkan"
 
-msgid "Disabled IP Address Recording"
-msgstr "Perekaman Alamat IP Dinonaktifkan"
-
-msgid "Enabled Project History & IP Address Recording"
-msgstr "Aktifkan Riwayat Proyek & Rekaman Alamat IP"
-
-msgid "Enabled IP Address Recording"
-msgstr "Aktifkan Rekaman Alamat IP"
-
-msgid "History Settings Changed"
+#, fuzzy
+msgid "History Settings Changed (legacy settings)"
 msgstr "Setelan Riwayat Diubah"
 
 #, python-format
@@ -538,26 +549,6 @@ msgstr ""
 #, python-format
 msgid "Bill %(name)s: %(property_name)s changed to %(after)s"
 msgstr ""
-
-msgid "Confirm Remove IP Adresses"
-msgstr "Konfirmasi Hapus Alamat IP"
-
-msgid ""
-"Are you sure you want to delete all recorded IP addresses from this "
-"project?\n"
-"                The rest of the project history will be unaffected. This "
-"action cannot be undone."
-msgstr ""
-"Anda yakin ingin menghapus semua alamat IP yang direkam dari proyek ini?\n"
-"                Sisa riwayat proyek tidak akan terpengaruh. Tindakan ini "
-"tidak bisa dibatalkan."
-
-#, fuzzy
-msgid "Confirm deletion"
-msgstr "Konfirmasi Hapus"
-
-msgid "Close"
-msgstr "Tutup"
 
 msgid "Delete Confirmation"
 msgstr "Hapus Konfirmasi"
@@ -569,6 +560,13 @@ msgstr ""
 "Anda yakin ingin menghapus semua riwayat untuk proyek ini? Tindakan ini "
 "tidak bisa dibatalkan."
 
+#, fuzzy
+msgid "Confirm deletion"
+msgstr "Konfirmasi Hapus"
+
+msgid "Close"
+msgstr "Tutup"
+
 #, python-format
 msgid "Bill %(name)s: added %(owers_list_str)s to owers list"
 msgstr ""
@@ -576,6 +574,32 @@ msgstr ""
 #, python-format
 msgid "Bill %(name)s: removed %(owers_list_str)s from owers list"
 msgstr ""
+
+msgid "Details of the bill (before the change)"
+msgstr ""
+
+#, fuzzy
+msgid "Details of the bill"
+msgstr "Ubah tagihan ini"
+
+#, fuzzy
+msgid "Date:"
+msgstr "Tanggal"
+
+#, fuzzy
+msgid "Payer:"
+msgstr "Pembayar"
+
+#, fuzzy
+msgid "Amount:"
+msgstr "Jumlah"
+
+msgid "Owers:"
+msgstr ""
+
+#, fuzzy
+msgid "External link:"
+msgstr "Tautan luar"
 
 msgid "This project has history disabled. New actions won't appear below."
 msgstr ""
@@ -593,22 +617,6 @@ msgstr ""
 msgid "You can clear the project history to remove them."
 msgstr "Seseorang mungkin membersihkan riwayat proyek."
 
-msgid ""
-"Some entries below contain IP addresses, even though this project has IP "
-"recording disabled. "
-msgstr ""
-"Beberapa entri dibawah mengandung alamat IP, walaupun proyek ini "
-"menonaktifkan rekaman alamat IP. "
-
-msgid "Delete stored IP addresses"
-msgstr "Hapus alamat IP yang disimpan"
-
-msgid "No IP Addresses to erase"
-msgstr "Tidak ada Alamat IP untuk dihapus"
-
-msgid "Delete Stored IP Addresses"
-msgstr "Hapus alamat IP yang disimpan"
-
 msgid "No history to erase"
 msgstr "Tidak ada riwayat untuk dihapus"
 
@@ -620,15 +628,6 @@ msgstr "Waktu"
 
 msgid "Event"
 msgstr "Peristiwa"
-
-msgid "IP address recording can be enabled on the settings page"
-msgstr "Perekaman alamat IP dapat diaktifkan di halaman pengaturan"
-
-msgid "IP address recording can be disabled on the settings page"
-msgstr "Perekaman alamat IP dapat dinonaktifkan di halaman pengaturan"
-
-msgid "From IP"
-msgstr "Dari IP"
 
 #, python-format
 msgid "Project %(name)s added"
@@ -657,24 +656,8 @@ msgid "Project settings modified"
 msgstr "Pengaturan proyek diubah"
 
 #, python-format
-msgid "Participant %(name)s deactivated"
-msgstr "Pengguna %(name)s dinonaktifkan"
-
-#, python-format
-msgid "Participant %(name)s reactivated"
-msgstr "Pengguna %(name)s diaktifkan kembali"
-
-#, python-format
-msgid "Participant %(name)s renamed to %(new_name)s"
-msgstr "Pengguna %(name)s diganti ke %(new_name)s"
-
-#, python-format
 msgid "Bill %(name)s renamed to %(new_description)s"
 msgstr "Tagihan %(name)s diganti ke %(new_description)s"
-
-#, python-format
-msgid "Participant %(name)s: weight changed from %(old_weight)s to %(new_weight)s"
-msgstr "Pengguna %(name)s: berat berubah dari %(old_weight)s ke %(new_weight)s"
 
 msgid "Payer"
 msgstr "Pembayar"
@@ -692,6 +675,22 @@ msgstr "Jumlah dalam %(currency)s"
 #, python-format
 msgid "Bill %(name)s modified"
 msgstr "Tagihan %(name)s telah dimodifikasi"
+
+#, python-format
+msgid "Participant %(name)s deactivated"
+msgstr "Pengguna %(name)s dinonaktifkan"
+
+#, python-format
+msgid "Participant %(name)s reactivated"
+msgstr "Pengguna %(name)s diaktifkan kembali"
+
+#, python-format
+msgid "Participant %(name)s renamed to %(new_name)s"
+msgstr "Pengguna %(name)s diganti ke %(new_name)s"
+
+#, python-format
+msgid "Participant %(name)s: weight changed from %(old_weight)s to %(new_weight)s"
+msgstr "Pengguna %(name)s: berat berubah dari %(old_weight)s ke %(new_weight)s"
 
 #, python-format
 msgid "Participant %(name)s modified"
@@ -812,7 +811,7 @@ msgstr "Aplikasi Gawai"
 msgid "Documentation"
 msgstr "Dokumentasi"
 
-msgid "Administation Dashboard"
+msgid "Administration Dashboard"
 msgstr "Dasbor Administrasi"
 
 msgid "Legal information"
@@ -831,6 +830,14 @@ msgstr "%(amount)s masing-masing"
 msgid "you sure?"
 msgstr "Anda yakin?"
 
+#, fuzzy
+msgid "Hide filters"
+msgstr "ID:"
+
+#, fuzzy
+msgid "Show filters"
+msgstr "Pilih berkas"
+
 msgid "Invite people"
 msgstr "Undang orang"
 
@@ -840,11 +847,52 @@ msgstr "Tagihan terbaru"
 msgid "Older bills"
 msgstr "Tagihan terdahulu"
 
+msgid "Toggle filters"
+msgstr ""
+
 msgid "You should start by adding participants"
 msgstr "Anda harus mulai dengan menambahkan partisipan"
 
 msgid "Add a new bill"
 msgstr "Tambah tagihan baru"
+
+msgid "Search"
+msgstr ""
+
+#, fuzzy
+msgid "Search in For what?"
+msgstr "Untuk apa?"
+
+#, fuzzy
+msgid "Any payer"
+msgstr "Pembayar"
+
+msgid "Start date"
+msgstr ""
+
+#, fuzzy
+msgid "End date"
+msgstr "Tanggal"
+
+#, fuzzy
+msgid "Amount min"
+msgstr "Jumlah"
+
+msgid "Min cost"
+msgstr ""
+
+#, fuzzy
+msgid "Amount max"
+msgstr "Jumlah"
+
+msgid "Max cost"
+msgstr ""
+
+msgid "Filter"
+msgstr ""
+
+msgid "Clear filters"
+msgstr ""
 
 msgid "For what?"
 msgstr "Untuk apa?"
@@ -952,6 +1000,17 @@ msgstr "Siapa membayar?"
 msgid "To whom?"
 msgstr "Kepada siapa?"
 
+#, fuzzy
+msgid "Settled?"
+msgstr "Atur"
+
+msgid "Click here to record that the money transfer has been done"
+msgstr ""
+
+#, fuzzy
+msgid "Register settlement"
+msgstr "Atur"
+
 msgid "Who?"
 msgstr "Siapa?"
 
@@ -967,10 +1026,19 @@ msgstr "aktivasi ulang"
 msgid "Paid"
 msgstr "Dibayar"
 
-msgid "Spent"
-msgstr "Dihabiskan"
+#, fuzzy
+msgid "Expenses"
+msgstr "Pengeluaran menurut Bulan"
 
-msgid "Expenses by Month"
+msgid "Direct transfer"
+msgstr ""
+
+#, fuzzy
+msgid "Received"
+msgstr "aktivasi ulang"
+
+#, fuzzy
+msgid "Expenses by month"
 msgstr "Pengeluaran menurut Bulan"
 
 msgid "Period"
@@ -1165,4 +1233,73 @@ msgstr "Periode"
 #~ "Anda bisa membagikan tautan secara "
 #~ "langsung melalui media yang Anda "
 #~ "inginkan"
+
+#~ msgid "Spent"
+#~ msgstr "Dihabiskan"
+
+#~ msgid "Use IP tracking for project history"
+#~ msgstr "Gunakan pelacakan IP untuk riwayat proyek"
+
+#~ msgid "Error deleting recorded IP addresses"
+#~ msgstr "Kesalahan menghapus alamat IP yang disimpan"
+
+#~ msgid "Deleted recorded IP addresses in project history."
+#~ msgstr "Terhapus alamat IP yang disimpan dalam riwayat proyek."
+
+#~ msgid "Disabled Project History & IP Address Recording"
+#~ msgstr "Nonaktifkan riwayat proyek & rekaman alamat IP"
+
+#~ msgid "Disabled IP Address Recording"
+#~ msgstr "Perekaman Alamat IP Dinonaktifkan"
+
+#~ msgid "Enabled Project History & IP Address Recording"
+#~ msgstr "Aktifkan Riwayat Proyek & Rekaman Alamat IP"
+
+#~ msgid "Enabled IP Address Recording"
+#~ msgstr "Aktifkan Rekaman Alamat IP"
+
+#~ msgid "Confirm Remove IP Adresses"
+#~ msgstr "Konfirmasi Hapus Alamat IP"
+
+#~ msgid ""
+#~ "Are you sure you want to delete"
+#~ " all recorded IP addresses from this"
+#~ " project?\n"
+#~ "                The rest of the project"
+#~ " history will be unaffected. This "
+#~ "action cannot be undone."
+#~ msgstr ""
+#~ "Anda yakin ingin menghapus semua alamat"
+#~ " IP yang direkam dari proyek ini?"
+#~ "\n"
+#~ "                Sisa riwayat proyek tidak "
+#~ "akan terpengaruh. Tindakan ini tidak "
+#~ "bisa dibatalkan."
+
+#~ msgid ""
+#~ "Some entries below contain IP addresses,"
+#~ " even though this project has IP "
+#~ "recording disabled. "
+#~ msgstr ""
+#~ "Beberapa entri dibawah mengandung alamat "
+#~ "IP, walaupun proyek ini menonaktifkan "
+#~ "rekaman alamat IP. "
+
+#~ msgid "Delete stored IP addresses"
+#~ msgstr "Hapus alamat IP yang disimpan"
+
+#~ msgid "No IP Addresses to erase"
+#~ msgstr "Tidak ada Alamat IP untuk dihapus"
+
+#~ msgid "Delete Stored IP Addresses"
+#~ msgstr "Hapus alamat IP yang disimpan"
+
+#~ msgid "IP address recording can be enabled on the settings page"
+#~ msgstr "Perekaman alamat IP dapat diaktifkan di halaman pengaturan"
+
+#~ msgid "IP address recording can be disabled on the settings page"
+#~ msgstr "Perekaman alamat IP dapat dinonaktifkan di halaman pengaturan"
+
+#~ msgid "From IP"
+#~ msgstr "Dari IP"
 
